@@ -1,0 +1,12 @@
+{
+  "name": "hermitcrab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "./build.js"
+  },
+  "dependencies": {
+    "glob": "^7.1.6"
+  }
+}
