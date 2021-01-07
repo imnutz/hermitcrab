@@ -41,6 +41,12 @@
     td.set('$global', 'td_global_id', 'td_global_id')
     td.trackEvent('track_event', {date_string: (new Date()).toString()}, function () {
       console.log('yay')
+
+      td.fetchGlobalID(function () {
+        console.log('global_id, yay')
+      }, function () {
+        console.log('global_id, nay')
+      })
     }, function () {
       console.log('nay')
     })
