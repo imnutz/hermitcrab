@@ -39,17 +39,12 @@
 
     td.setSignedMode()
     td.set('$global', 'td_global_id', 'td_global_id')
-    td.fetchGlobalID(function (v) {
-      console.log('global_id:', v)
-    }, function () {
-      console.log('global_id, nay')
-    })
 
-    // td.trackEvent('track_event', {date_string: (new Date()).toString()}, function () {
-    //   console.log('yay')
-    // }, function () {
-    //   console.log('nay')
-    // }, true)
+     td.trackEvent('track_event', {date_string: (new Date()).toString()}, function () {
+       console.log('yay')
+     }, function () {
+       console.log('nay')
+     }, true)
   </script>
 </head>
 <body>
