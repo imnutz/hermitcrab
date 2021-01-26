@@ -45,6 +45,12 @@
      }, function () {
        console.log('nay')
      }, true)
+
+     td.trackPageview('test_page_view', function () {
+       console.log('yay:pageview')
+     }, function () {
+       console.log('nay: page_view')
+     }, true)
   </script>
 </head>
 <body>
