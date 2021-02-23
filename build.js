@@ -9,7 +9,7 @@ function replaceTdInfo (database, host, apiKey) {
   host = host || fakeInfo
   apiKey = apiKey || fakeInfo
 
-  var files = glob.sync('index.html')
+  var files = glob.sync('*.html')
   files.forEach(fileName => {
     var data = fs.readFileSync(fileName, 'utf-8')
     var replacedData = data
