@@ -34,10 +34,10 @@
       database: 'xxxxxxxxxx',
       writeKey: 'xxxxxxxxxx',
       host: 'xxxxxxxxxx',
-      startInSignedMode: true,
       storeConsentByLocalStorage: true
     })
 
+    td.setSignedMode()
     td.fetchGlobalID(function (value) {
       console.log('yay: ', value)
     }, function () {
