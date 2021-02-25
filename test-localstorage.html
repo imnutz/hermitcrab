@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localStorage test</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    function lsTest(){
+        var test = 'test';
+        try {
+            localStorage.setItem(test, test);
+            localStorage.removeItem(test);
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }
+
+    if(lsTest() === true){
+      console.log('yay')
+    }else{
+      console.log('yay')
+    }
+  </script>
+
+</body>
+
+</html>
