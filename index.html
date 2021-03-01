@@ -56,9 +56,9 @@
     })
 
     td.addRecord('add_record', { ramen: 'ラーメン' }, function () {
-      console.loc('add record: yay')
+      console.log('add record: yay')
     }, function () {
-      console.loc('add record: nay')
+      console.log('add record: nay')
     })
 
     td.fetchUserSegments({
@@ -67,9 +67,9 @@
         email: 'someone@somewhere.com'
       }
     }, function (response) {
-      console.loc('user segment: yay')
+      console.log('user segment: yay')
     }, function () {
-      console.loc('user segment: nay')
+      console.log('user segment: nay')
     })
   </script>
 </head>
