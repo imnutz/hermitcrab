@@ -47,6 +47,30 @@
         console.log('nay')
       })
     })
+    td.trackClicks()
+
+    td.trackEvent('track_event', {date_string: (new Date()).toString()}, function () {
+      console.log('track event: yay')
+    }, function () {
+      console.log('track event: nay')
+    })
+
+    td.addRecord('add_record', { ramen: 'ラーメン' }, function () {
+      console.loc('add record: yay')
+    }, function () {
+      console.loc('add record: nay')
+    })
+
+    td.fetchUserSegments({
+      audienceToken: ['xxxxxxxxxx'],
+      keys: {
+        email: 'someone@somewhere.com'
+      }
+    }, function (response) {
+      console.loc('user segment: yay')
+    }, function () {
+      console.loc('user segment: nay')
+    })
   </script>
 </head>
 <body>
@@ -71,5 +95,6 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga expedita doloribus itaque quae modi cupiditate corporis dignissimos assumenda eos, nam veritatis ipsam repellat dolore voluptatibus ullam quod laudantium amet. Fugiat!
     </p>
   </div>
+  <button>Click me!</button>
 </body>
 </html>

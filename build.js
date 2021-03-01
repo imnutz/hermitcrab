@@ -4,10 +4,11 @@ var fs = require('fs')
 
 var fakeInfo = 'xxxxxxxxxx'
 
-function replaceTdInfo (database, host, apiKey) {
+function replaceTdInfo (database, host, apiKey, segmentToken) {
   database = database || fakeInfo
   host = host || fakeInfo
   apiKey = apiKey || fakeInfo
+  segmentToken = segmentToken || fakeInfo
 
   var files = glob.sync('*.html')
   files.forEach(fileName => {
@@ -16,6 +17,7 @@ function replaceTdInfo (database, host, apiKey) {
       .replace(/database:.*'/g, `database: '${database}'`)
       .replace(/host:.*'/g, `host: '${host}'`)
       .replace(/writeKey:.*'/g, `writeKey: '${apiKey}'`)
+      .replace(/audienceToken:.*\[.*\]/g, `audienceToken: ['${segmentToken}']`)
 
     fs.writeFileSync(fileName, replacedData, 'utf-8')
   })
@@ -24,7 +26,8 @@ function replaceTdInfo (database, host, apiKey) {
 let {
   database,
   tdHost,
-  apiKey
+  apiKey,
+  segmentToken
 } = process.env
 
 replaceTdInfo(database, tdHost, apiKey)
