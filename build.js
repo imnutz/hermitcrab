@@ -30,4 +30,4 @@ let {
   segmentToken
 } = process.env
 
-replaceTdInfo(database, tdHost, apiKey)
+replaceTdInfo(database, tdHost, apiKey, segmentToken)
