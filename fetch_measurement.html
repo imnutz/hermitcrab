@@ -104,31 +104,42 @@
 </head>
 <body>
   <div class="container">
-    <h1>-TD*JS*SDK-</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga expedita doloribus itaque quae modi cupiditate corporis dignissimos assumenda eos, nam veritatis ipsam repellat dolore voluptatibus ullam quod laudantium amet. Fugiat!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga expedita doloribus itaque quae modi cupiditate corporis dignissimos assumenda eos, nam veritatis ipsam repellat dolore voluptatibus ullam quod laudantium amet. Fugiat!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga expedita doloribus itaque quae modi cupiditate corporis dignissimos assumenda eos, nam veritatis ipsam repellat dolore voluptatibus ullam quod laudantium amet. Fugiat!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga expedita doloribus itaque quae modi cupiditate corporis dignissimos assumenda eos, nam veritatis ipsam repellat dolore voluptatibus ullam quod laudantium amet. Fugiat!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga expedita doloribus itaque quae modi cupiditate corporis dignissimos assumenda eos, nam veritatis ipsam repellat dolore voluptatibus ullam quod laudantium amet. Fugiat!
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga expedita doloribus itaque quae modi cupiditate corporis dignissimos assumenda eos, nam veritatis ipsam repellat dolore voluptatibus ullam quod laudantium amet. Fugiat!
-    </p>
+    <h1>Fetch API latency measurement</h1>
+    <div>
+      <div class="row">
+        <span>Pageview</span>
+        <span class="pageview"></span>
+      </div>
+      <div class="row">
+        <span>Global ID</span>
+        <span class="globalid"></span>
+      </div>
+      <div class="row">
+        <span>Track event</span>
+        <span class="trackevent"></span>
+      </div>
+      <div class="row">
+        <span>Add record</span>
+        <span class="addrecord"></span>
+      </div>
+      <div class="row">
+        <span>User segment</span>
+        <span class="usersegment"></span>
+      </div>
+
+    </div>
   </div>
 
   <script>
     setTimeout(function() {
-      var measurements = window.performance.getEntriesByType('measure')
-      console.log(measurements)
+      var pageviewEl = document.querySelector('.pageview')
+      var measurements = window.performance.getEntriesByType('measure') || []
+      measurements.forEach(function(m) {
+        var name = m.name
+            if (name === pageview) {
+              pageviewEl.textContent = m.duration + 'ms'
+            }
+      })
     }, 10000)
   </script>
 </body>
