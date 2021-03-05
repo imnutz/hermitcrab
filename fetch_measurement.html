@@ -152,13 +152,27 @@
   <script>
     setTimeout(function() {
       var pageviewEl = document.querySelector('.pageview')
+      var globalidEl = document.querySelector('.globalid')
+      var trackeventEl = document.querySelector('.trackevent')
+      var addrecordEl = document.querySelector('.addrecord')
+      var userSegmentEl = document.querySelector('.usersegment')
+
       var measurements = window.performance.getEntriesByType('measure') || []
           console.log(measurements)
       measurements.forEach(function(m) {
         var name = m.name
-            if (name === pageview) {
-              pageviewEl.textContent = Math.round(m.duration) + 'ms'
-            }
+        var duration = Math.round(m.duration)
+        if (name === pageview) {
+          pageviewEl.textContent = duration + 'ms'
+        } else if (name === globalid) {
+          globalidEl.textContent  = duration + 'ms'
+        } else if (name === trackevent) {
+          trackeventEl.textContent  = duration + 'ms'
+        } else if (name === addrecord) {
+          addrecordEl.textContent  = duration + 'ms'
+        } else if (name === usersegment) {
+          userSegmentEl.textContent  = duration + 'ms'
+        }
       })
     }, 3000)
   </script>
