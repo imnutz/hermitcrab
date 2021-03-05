@@ -35,10 +35,11 @@
     }
 
     .row {
-      display: flex
+      display: flex;
+      border-bottom: 1px dotted gray;
     }
 
-    .row span:first-of-child {
+    .row span:first-child {
       width: 200px;
     }
   </style>
@@ -156,10 +157,10 @@
       measurements.forEach(function(m) {
         var name = m.name
             if (name === pageview) {
-              pageviewEl.textContent = m.duration + 'ms'
+              pageviewEl.textContent = Math.round(m.duration) + 'ms'
             }
       })
-    }, 10000)
+    }, 3000)
   </script>
 </body>
 </html>
