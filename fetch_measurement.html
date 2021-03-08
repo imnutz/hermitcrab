@@ -105,11 +105,12 @@
         console.log('add record: nay')
       })
 
+      // email: 'someone@somewhere.com',
       performance.mark(usersegment_start)
       td.fetchUserSegments({
         audienceToken: ['xxxxxxxxxx'],
         keys: {
-          email: 'someone@somewhere.com'
+          city: 'Denver'
         }
       }, function (response) {
         performance.mark(usersegment_end)
