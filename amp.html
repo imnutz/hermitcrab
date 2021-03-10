@@ -19,8 +19,26 @@
     </script>
   </head>
   <body>
-    <amp-script src="https://standardis.fun/profile_api.js">
-      <p>Hey, whats up!</p>
+    <amp-script src="https://cdn.treasuredata.com/sdk/2.5/td.min.js">
+      var td = new Treasure({
+        database: 'xxxxxxxxxx',
+        writeKey: 'xxxxxxxxxx',
+        host: 'xxxxxxxxxx',
+        cdpHost: 'cdp-development.in.treasuredata.com'
+      })
+      td.setSignedMode()
+      td.set('$global', 'td_global_id', 'td_global_id')
+
+      td.fetchUserSegments({
+        audienceToken: ['69761907-bca5-4124-a64c-2faf1eb10829'],
+        keys: {
+          city: 'Denver'
+        }
+      }, function (response) {
+        console.log('user segment: yay')
+      }, function () {
+        console.log('user segment: nay')
+      })
     </amp-script>
   </body>
 </html>
