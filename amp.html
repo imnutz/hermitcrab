@@ -23,28 +23,6 @@
 
   </head>
   <body>
-    <amp-script script="jssdk" layout="container"></amp-script>
-    <script id="jssdk" type="text/plain" target="amp-script">
-      var td = new Treasure({
-        database: 'xxxxxxxxxx',
-        writeKey: 'xxxxxxxxxx',
-        host: 'xxxxxxxxxx',
-        cdpHost: 'cdp-development.in.treasuredata.com'
-      })
-      td.setSignedMode()
-      td.set('$global', 'td_global_id', 'td_global_id')
-
-      td.fetchUserSegments({
-        audienceToken: ['69761907-bca5-4124-a64c-2faf1eb10829'],
-        keys: {
-          city: 'Denver'
-        }
-      }, function (response) {
-        console.log('user segment: yay')
-      }, function () {
-        console.log('user segment: nay')
-      })
-
-    </script>
+    <amp-script src="./profile_api.js" layout="container"></amp-script>
   </body>
 </html>

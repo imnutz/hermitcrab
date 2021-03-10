@@ -66,7 +66,7 @@ td.ready(function() {
     keys: {
       city: 'Denver'
     }
-  }, function (response) {
+  }, function () {
     performance.mark(usersegment_end)
     performance.measure(usersegment, usersegment_start, usersegment_end)
     console.log('user segment: yay')
