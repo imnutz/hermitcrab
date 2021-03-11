@@ -1,0 +1,28 @@
+<html amp lang="en">
+  <head>
+    <meta name="amp-script-src" content="sha384-nsJH3BuJ_zwPYvsH6sgFaulJRNzn2-S9a8_-usDdWsrbBOtffIKKeI84ysJGh_ZY">
+    <meta charset="utf-8">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <title>Hello, AMPs</title>
+    <link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+    <meta name="viewport" content="width=device-width">
+    <script>
+    </script>
+  </head>
+  <body>
+    <amp-script script="jssdk" layout="container" height="300" width="500">
+      <p>hey, whats up?</p>
+    </amp-script>
+    <script target="amp-script" id="jssdk" type="text/plain">
+      var tokens = {
+        audienceToken: ['xxxxxxxxxx']
+      }
+
+      var tokenParam = tokens.audienceToken.join(',')
+      var url = `https://cdp-development.in.treasuredata.com/cdp/lookup/collect/segments?version=2&token=${tokenParam}&key.city=Denver`;
+      fetch(url).then(response => response.json()).then(result => console.log(result))
+    </script>
+  </body>
+</html>
