@@ -27,8 +27,6 @@
         .then(response => response.json())
         .then(result => {
           var pre = document.getElementById('result')
-          console.log(pre)
-          console.log(result)
           pre.textContent = JSON.stringify(result, null, 2)
         })
     </script>
