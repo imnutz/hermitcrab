@@ -13,7 +13,7 @@
   </head>
   <body>
     <amp-script script="jssdk" layout="container" height="300" width="500">
-      <pre></pre>
+      <pre id="result"></pre>
     </amp-script>
     <script target="amp-script" id="jssdk" type="text/plain">
       var tokens = {
@@ -25,7 +25,7 @@
       fetch(url)
         .then(response => response.json())
         .then(result => {
-          var pre = document.querySelector('pre')
+          var pre = document.getElementById('result')
           pre.textContent = JSON.stringify(result, null, 2)
         })
     </script>
