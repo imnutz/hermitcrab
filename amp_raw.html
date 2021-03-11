@@ -13,7 +13,7 @@
   </head>
   <body>
     <amp-script script="jssdk" layout="container" height="300" width="500">
-      <p>hey, whats up?</p>
+      <pre></pre>
     </amp-script>
     <script target="amp-script" id="jssdk" type="text/plain">
       var tokens = {
@@ -22,7 +22,12 @@
 
       var tokenParam = tokens.audienceToken.join(',')
       var url = `https://cdp-development.in.treasuredata.com/cdp/lookup/collect/segments?version=2&token=${tokenParam}&key.city=Denver`;
-      fetch(url).then(response => response.json()).then(result => console.log(result))
+      fetch(url)
+        .then(response => response.json())
+        .then(result => {
+          var pre = document.querySelector('pre')
+          pre.textContent = JSON.stringify(result, null, 2)
+        })
     </script>
   </body>
 </html>
