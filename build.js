@@ -1,16 +1,21 @@
 #!/usr/bin/env node
-var glob = require('glob')
+var glob = require("glob");
 var fs = require('fs')
+var dotenv = require('dotenv');
 
-var fakeInfo = 'xxxxxxxxxx'
+dotenv.config()
 
-function replaceTdInfo (database, host, apiKey, segmentToken) {
+console.log(process.env);
+
+var fakeInfo = "xxxxxxxxxx";
+
+function replaceTdInfo (path, database, host, apiKey, segmentToken) {
   database = database || fakeInfo
   host = host || fakeInfo
   apiKey = apiKey || fakeInfo
   segmentToken = segmentToken || fakeInfo
 
-  var files = glob.sync('*.html')
+  var files = glob.sync(path)
   files.forEach(fileName => {
     var data = fs.readFileSync(fileName, 'utf-8')
     var replacedData = data
@@ -30,4 +35,21 @@ let {
   segmentToken
 } = process.env
 
-replaceTdInfo(database, tdHost, apiKey, segmentToken)
+replaceTdInfo(
+  './*.html',
+  database,
+  tdHost,
+  apiKey,
+  segmentToken
+);
+
+
+let { databaseAp03, tdHostAp03, apiKeyAp03, segmentTokenAp03 } = process.env;
+
+replaceTdInfo(
+  './ap03/*.html',
+  databaseAp03,
+  tdHostAp03,
+  apiKeyAp03,
+  segmentTokenAp03
+);
