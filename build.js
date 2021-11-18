@@ -32,7 +32,8 @@ let {
   database,
   tdHost,
   apiKey,
-  segmentToken
+  segmentToken,
+  c360Host
 } = process.env
 
 replaceTdInfo(
@@ -46,7 +47,7 @@ replaceTdInfo(
 replaceTdInfo(
   './c360/*.html',
   database,
-  tdHost,
+  c360Host,
   apiKey,
   segmentToken
 );
