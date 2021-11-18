@@ -1,0 +1,58 @@
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>c360-ingest-api Testing</title>
+      <script type="text/javascript">
+        !function(t,e){if(void 0===e[t]){e[t]=function(){e[t].clients.push(this),this._init=[Array.prototype.slice.call(arguments)]},e[t].clients=[];for(var r=["addRecord","blockEvents","fetchServerCookie","fetchGlobalID","fetchUserSegments","resetUUID","ready","setSignedMode","setAnonymousMode","set","trackEvent","trackPageview","trackClicks","unblockEvents"],s=0;s<r.length;s++){var c=r[s];e[t].prototype[c]=function(t){return function(){return this["_"+t]=this["_"+t]||[],this["_"+t].push(Array.prototype.slice.call(arguments)),this}}(c)}var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.treasuredata.com/sdk/2.5/td.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o)}}("Treasure",this);
+      </script>
+      <script>
+        var td = new Treasure({
+          database: 'xxxxxxxxxx',
+          writeKey: 'xxxxxxxxxx',
+          host: 'xxxxxxxxxx',
+          pathname: '/',
+          storeConsentByLocalStorage: true
+        })
+
+        td.setSignedMode()
+        td.set('$global', 'td_global_id', 'td_global_id')
+        td.trackPageview('pageview_3_0', function () {
+          console.log('tracked pageview')
+
+          td.fetchGlobalID(function (value) {
+            console.log('yay: ', value)
+          }, function () {
+            console.log('nay')
+          })
+        })
+        td.trackClicks()
+
+        td.trackEvent('track_event', {date_string: (new Date()).toString()}, function () {
+          console.log('track event: yay')
+        }, function () {
+          console.log('track event: nay')
+        })
+
+        td.addRecord('add_record', { ramen: 'ラーメン' }, function () {
+          console.log('add record: yay')
+        }, function () {
+          console.log('add record: nay')
+        })
+
+        td.fetchUserSegments({
+          audienceToken: ['xxxxxxxxxx'],
+          keys: {
+            email: 'someone@somewhere.com'
+          }
+        }, function (response) {
+          console.log('user segment: yay')
+        }, function () {
+          console.log('user segment: nay')
+        })
+      </script>
+    </head>
+<body>
+  
+</body>
+</html>
