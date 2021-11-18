@@ -43,6 +43,14 @@ replaceTdInfo(
   segmentToken
 );
 
+replaceTdInfo(
+  './c360/*.html',
+  database,
+  tdHost,
+  apiKey,
+  segmentToken
+);
+
 
 let { databaseAp03, tdHostAp03, apiKeyAp03, segmentTokenAp03 } = process.env;
 
