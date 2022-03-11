@@ -18,10 +18,24 @@
         height:100vh;
       }
 
+      .desc {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        border: 1px solid green;
+        padding: 10px;
+        border-radius: 5px;
+        width: 300px;
+        z-index: 9999;
+      }
+      .desc ul {
+        list-style: none;
+      }
+
       .settings-panel {
         position: absolute;
         left: 5px;
-        top: 50px;
+        top: 5px;
         border: 1px solid red;
         padding: 10px;
         border-radius: 5px;
@@ -80,6 +94,14 @@
     </script>
   </head>
   <body>
+    <div class="desc">
+      <h3>The demo includes:</h3>
+      <ul>
+        <li>- Google Tag Manager script embed</li>
+        <li>- Cookie banner configurations are fetched from S3</li>
+        <li>- Customization for the banner and the modal</li>
+      </ul>
+    </div>
     <div class="settings-panel">
       <h1>Customization</h1>
       <div class="setting sizing">
