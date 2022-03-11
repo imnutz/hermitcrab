@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>&lt;my-element> Demo</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body, h1, h3, h4 {
+        margin: 0;
+        padding: 0
+      }
+
+      body {
+        width: 100vw;
+        height:100vh;
+      }
+
+      .settings-panel {
+        position: absolute;
+        left: 5px;
+        top: 50px;
+        border: 1px solid red;
+        padding: 10px;
+        border-radius: 5px;
+        width: 300px;
+        z-index: 9999;
+      }
+
+      .settings-panel .setting {
+        margin: 10px 0;
+      }
+      .settings-panel .setting h3 {
+        padding: 5px 0;
+        margin-bottom: 20px;
+        border-bottom: 1px dotted black;
+      }
+
+      td-cookie-banner {
+      }
+
+      td-cookie-modal {
+      }
+
+      .colors .bg,
+      .colors .text-color,
+      .colors .border-color {
+        display: flex;
+        align-items: center;
+        padding: 3px 5px;
+        border: 1px solid black;
+        border-radius: 3px;
+        margin: 5px 0;
+      }
+
+      .colors .bg label,
+      .colors .text-color label,
+      .colors .border-color label {
+        flex: 1;
+      }
+    </style>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/lit/polyfill-support.js"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WF937S6');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+      window.onload = function () {
+        var btn = document.querySelector('.prefs');
+
+        btn.addEventListener('click', function () {
+          Treasure.CookieControl.showPreferencesModal();
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="settings-panel">
+      <h1>Customization</h1>
+      <div class="setting sizing">
+        <h3>Sizing</h3>
+        <button>40%</button>
+        <button>60%</button>
+        <button>80%</button>
+        <button>100%</button>
+      </div>
+      <div class="setting colors">
+        <h3>Colors</h3>
+        <div class="accept">
+          <h4>Accept</h4>
+          <div class="bg">
+            <label for="bg">Background color</label>
+            <input type="color" name="bg" />
+          </div>
+          <div class="text-color">
+            <label for="textColor">Text color</label>
+            <input type="color" name="textColor" />
+          </div>
+          <div class="border-color">
+            <label for="borderColor">Border color</label>
+            <input type="color" name="borderColor" />
+          </div>
+        </div>
+
+        <div class="deny">
+          <h4>Deny</h4>
+          <div class="bg">
+            <label for="bg">Background color</label>
+            <input type="color" name="bg" />
+          </div>
+          <div class="text-color">
+            <label for="textColor">Text color</label>
+            <input type="color" name="textColor" />
+          </div>
+          <div class="border-color">
+            <label for="borderColor">Border color</label>
+            <input type="color" name="borderColor" />
+          </div>
+
+        </div>
+
+        <div class="confirmation">
+          <h4>Confirmation</h4>
+          <div class="bg">
+            <label for="bg">Background color</label>
+            <input type="color" name="bg" />
+          </div>
+          <div class="text-color">
+            <label for="textColor">Text color</label>
+            <input type="color" name="textColor" />
+          </div>
+          <div class="border-color">
+            <label for="borderColor">Border color</label>
+            <input type="color" name="borderColor" />
+          </div>
+        </div>
+      </div>
+      <div class="setting layout">
+        <h3>Layout</h3>
+        <label for="bar"><input type="radio" value="bar" id="bar" name="layoutType">Bar</label>
+        <label for="popup"><input type="radio" value="popup" id="popup" name="layoutType" checked>Popup</label>
+      </div>
+
+      <button class="prefs">Show preferences</button>
+    </div>
+    <script src="./script.js"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF937S6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+  </body>
+</html>
