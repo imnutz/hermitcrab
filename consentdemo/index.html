@@ -8,7 +8,7 @@
       * {
         box-sizing: border-box;
       }
-      body, h1, h3, h4, ul {
+      body, h1, h3, h4 {
         margin: 0;
         padding: 0
       }
@@ -19,27 +19,10 @@
         background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(3,132,176,1) 0%, rgba(255,255,255,1) 100%);
       }
 
-      .desc {
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        border: 1px solid green;
-        padding: 10px;
-        border-radius: 5px;
-        width: 300px;
-        z-index: 9999;
-      }
-      .desc ul {
-        list-style: none;
-      }
-      .desc ul li {
-        padding: 3px 0;
-      }
-
       .settings-panel {
         position: absolute;
         left: 5px;
-        top: 5px;
+        top: 50px;
         border: 1px solid red;
         padding: 10px;
         border-radius: 5px;
@@ -62,9 +45,11 @@
       td-cookie-modal {
       }
 
+      .common .bg,
+      .common .button-color,
       .colors .bg,
       .colors .text-color,
-      .colors .border-color {
+      .colors .border-color{
         display: flex;
         align-items: center;
         padding: 3px 5px;
@@ -73,12 +58,16 @@
         margin: 5px 0;
       }
 
+      .common .bg label,
+      .common .button-color label,
       .colors .bg label,
       .colors .text-color label,
       .colors .border-color label {
         flex: 1;
       }
     </style>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/lit/polyfill-support.js"></script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -98,14 +87,6 @@
     </script>
   </head>
   <body>
-    <div class="desc">
-      <h3>The demo includes:</h3>
-      <ul>
-        <li>- Google Tag Manager script embed</li>
-        <li>- Cookie banner configurations are fetched from S3</li>
-        <li>- Customization for the banner and the modal</li>
-      </ul>
-    </div>
     <div class="settings-panel">
       <h1>Customization</h1>
       <div class="setting sizing">
@@ -117,6 +98,17 @@
       </div>
       <div class="setting colors">
         <h3>Colors</h3>
+        <div class="common">
+          <div class="bg">
+            <label for="bg">Background color</label>
+            <input type="color" name="bg" />
+          </div>
+          <div class="button-color">
+            <label for="buttonColor">Button Color</label>
+            <input type="color" name="buttonColor" />
+          </div>
+        </div>
+
         <div class="accept">
           <h4>Accept</h4>
           <div class="bg">
@@ -174,7 +166,7 @@
 
       <button class="prefs">Show preferences</button>
     </div>
-    <script src="consentdemo/script.js"></script>
+    <script src="./script.js"></script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF937S6"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
