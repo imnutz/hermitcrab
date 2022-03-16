@@ -28,6 +28,8 @@
         border-radius: 5px;
         width: 300px;
         z-index: 9999;
+        height: 600px;
+        overflow-y: auto;
       }
 
       .settings-panel .setting {
@@ -88,7 +90,7 @@
     <div class="settings-panel">
       <h1>Customization</h1>
       <div class="setting sizing">
-        <h3>Sizing</h3>
+        <h3>Sizing - The banner only</h3>
         <button>40%</button>
         <button>60%</button>
         <button>80%</button>
@@ -97,6 +99,7 @@
       <div class="setting colors">
         <h3>Colors</h3>
         <div class="common">
+          <p>For both: the banner and the modal</p>
           <div class="bg">
             <label for="bg">Background color</label>
             <input type="color" name="bg" />
@@ -106,6 +109,7 @@
             <input type="color" name="buttonColor" />
           </div>
         </div>
+        <hr/>
 
         <div class="accept">
           <h4>Accept</h4>
@@ -157,7 +161,7 @@
         </div>
       </div>
       <div class="setting layout">
-        <h3>Layout</h3>
+        <h3>Layout - The banner only</h3>
         <label for="bar"><input type="radio" value="bar" id="bar" name="layoutType">Bar</label>
         <label for="popup"><input type="radio" value="popup" id="popup" name="layoutType" checked>Popup</label>
       </div>
