@@ -38,8 +38,8 @@
 
       .settings-panel {
         position: absolute;
-        left: 5px;
-        top: 5px;
+        right: 5px;
+        top: 200px;
         border: 1px solid red;
         padding: 10px;
         border-radius: 5px;
@@ -47,6 +47,9 @@
         z-index: 9999;
         height: 600px;
         overflow-y: auto;
+      }
+      .settings-panel h1 {
+        border-bottom: 1px solid black;
       }
 
       .settings-panel .setting {
@@ -85,12 +88,17 @@
         flex: 1;
       }
     </style>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/lit/polyfill-support.js"></script>
+    <script src="../src/loader.js"></script>
     <!-- Google Tag Manager -->
+    <!--
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WF937S6');</script>
+    -->
     <!-- End Google Tag Manager -->
 
     <script>
@@ -115,17 +123,25 @@
 
     <div class="settings-panel">
       <h1>Customization</h1>
+      <h2>Banner</h2>
       <div class="setting sizing">
-        <h3>Sizing - The banner</h3>
+        <h4>Sizing</h4>
         <button>40%</button>
         <button>60%</button>
         <button>80%</button>
         <button>100%</button>
       </div>
       <div class="setting layout">
-        <h3>Layout - The banner</h3>
+        <h4>Layout</h4>
         <label for="bar"><input type="radio" value="bar" id="bar" name="layoutType">Bar</label>
         <label for="popup"><input type="radio" value="popup" id="popup" name="layoutType" checked>Popup</label>
+      </div>
+
+      <div class="setting position">
+        <h4>Position</h4>
+        <label for="bar"><input type="radio" value="top" id="top" name="layout">Top</label>
+        <label for="popup"><input type="radio" value="bottom" id="bottom" name="layout" checked>Bottom</label>
+        <label for="popup"><input type="radio" value="middle" id="middle" name="layout" >Middle</label>
       </div>
 
       <h3>Show cookie manager</h3>
