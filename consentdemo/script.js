@@ -5,6 +5,7 @@
   var denyButtonColorContaqiner = doc.querySelector('.deny');
   var confirmationButtonColorContaqiner = doc.querySelector('.confirmation');
   var layoutContainer = doc.querySelector('.layout');
+  var positionContainer = doc.querySelector('.position');
   var commonColors = doc.querySelector('.common');
 
 
@@ -128,9 +129,17 @@
   layoutContainer.addEventListener('change', function (evt) {
     var value = evt.target.value;
 
-
     if (Treasure.CookieControl.banner) {
       Treasure.CookieControl.banner.layoutType = value;
     }
   });
+
+  positionContainer.addEventListener('change', function (evt) {
+    var value = evt.target.value;
+
+    if (Treasure.CookieControl.banner) {
+      Treasure.CookieControl.banner.layout = value;
+    }
+  });
+
 }(document);
