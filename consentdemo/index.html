@@ -4,6 +4,8 @@
   <head>
     <meta charset="utf-8" />
     <title>TD Cookie Banner</title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Inconsolata">
     <style>
       * {
         box-sizing: border-box;
@@ -17,6 +19,7 @@
         width: 100vw;
         height:100vh;
         background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(3,132,176,1) 0%, rgba(255,255,255,1) 100%);
+        font-family: 'Tangerine', serif;
       }
 
       .desc {
@@ -62,9 +65,15 @@
       }
 
       td-cookie-banner {
+        --banner-font-family: 'Inconsolata', serif;
+      }
+
+      td-privacy-button {
+        --privacy-button-font-family: 'Inconsolata', serif;
       }
 
       td-cookie-modal {
+        --modal-font-family: 'Inconsolata', serif;
       }
 
       .common .bg,
@@ -95,16 +104,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WF937S6');</script>
     <!-- End Google Tag Manager -->
-
-    <script>
-      window.onload = function () {
-        var btn = document.querySelector('.prefs');
-
-        btn.addEventListener('click', function () {
-          Treasure.CookieControl.showPreferencesModal();
-        });
-      };
-    </script>
   </head>
   <body>
     <div class="desc">
@@ -140,7 +139,6 @@
       </div>
 
       <h3>Show cookie manager</h3>
-      <button class="prefs">Show preferences</button>
       <div class="setting colors">
         <h3>Colors - Banner & Modal</h3>
         <div class="common">
