@@ -20,30 +20,7 @@
     td.trackPageview('pageview_3_0', function () {
       console.log('tracked pageview')
     })
-    td.trackClicks()
 
-    td.trackEvent('track_event', {date_string: (new Date()).toString()}, function () {
-      console.log('track event: yay')
-    }, function () {
-      console.log('track event: nay')
-    })
-
-    td.addRecord('add_record', { ramen: 'ラーメン' }, function () {
-      console.log('add record: yay')
-    }, function () {
-      console.log('add record: nay')
-    })
-
-    td.fetchUserSegments({
-      audienceToken: ['xxxxxxxxxx'],
-      keys: {
-        email: 'someone@somewhere.com'
-      }
-    }, function (response) {
-      console.log('user segment: yay')
-    }, function () {
-      console.log('user segment: nay')
-    })
   </script>
   </script>
 </head>
