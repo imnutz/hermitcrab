@@ -19,12 +19,6 @@
     //td.set('$global', 'td_global_id', 'td_global_id')
     td.trackPageview('pageview_3_0', function () {
       console.log('tracked pageview')
-
-      td.fetchGlobalID(function (value) {
-        console.log('yay: ', value)
-      }, function () {
-        console.log('nay')
-      })
     })
     td.trackClicks()
 
