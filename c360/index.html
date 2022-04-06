@@ -21,6 +21,16 @@
       console.log('tracked pageview')
     })
 
+    td.fetchGlobalID(
+      function(gid) {
+        console.log(gid)
+      },
+      function(e) {
+        console.error('oops:', e.message);
+      },
+      true
+    );
+
   </script>
   </script>
 </head>
