@@ -15,7 +15,9 @@
 
     var percentage = target.textContent;
 
-    Treasure.CookieControl.banner.width = percentage;
+    if (Treasure.CookieControl.banner) {
+      Treasure.CookieControl.banner.width = percentage;
+    }
   });
 
   commonColors.addEventListener('change', function (evt) {
