@@ -11,27 +11,44 @@
       database: 'xxxxxxxxxx',
       writeKey: 'xxxxxxxxxx',
       host: 'xxxxxxxxxx',
-      pathname: '',
-      storeConsentByLocalStorage: true
+      pathname: ''
     })
 
-    td.setSignedMode();
-    td.trackPageview('pageview_3_0', function () {
+    td.setSignedMode()
+    td.set('$global', 'td_global_id', 'td_global_id')
+    td.trackPageview('pageview_c360', function () {
       console.log('tracked pageview')
+
+      td.fetchGlobalID(function (value) {
+        console.log('yay: ', value)
+      }, function () {
+        console.log('nay')
+      })
+    })
+    td.trackClicks()
+
+    td.trackEvent('track_event', {date_string: (new Date()).toString()}, function () {
+      console.log('track event: yay')
+    }, function () {
+      console.log('track event: nay')
     })
 
-    /*
-    td.fetchGlobalID(
-      function(gid) {
-        console.log(gid)
-      },
-      function(e) {
-        console.error('oops:', e);
-      },
-      false
-    );
-   */
+    td.addRecord('add_record', { ramen: 'ラーメン' }, function () {
+      console.log('add record: yay')
+    }, function () {
+      console.log('add record: nay')
+    })
 
+    td.fetchUserSegments({
+      audienceToken: ['xxxxxxxxxx'],
+      keys: {
+        email: 'someone@somewhere.com'
+      }
+    }, function (response) {
+      console.log('user segment: yay')
+    }, function () {
+      console.log('user segment: nay')
+    }) 
   </script>
   </script>
 </head>
