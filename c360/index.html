@@ -11,7 +11,8 @@
       database: 'xxxxxxxxxx',
       writeKey: 'xxxxxxxxxx',
       host: 'xxxxxxxxxx',
-      pathname: ''
+      pathname: '/',
+      cdpHost: 'cdp-development.in.treasuredata.com'
     })
 
     td.setSignedMode()
@@ -42,7 +43,7 @@
     td.fetchUserSegments({
       audienceToken: ['xxxxxxxxxx'],
       keys: {
-        email: 'someone@somewhere.com'
+        country: 'usa'
       }
     }, function (response) {
       console.log('user segment: yay')
