@@ -46,19 +46,26 @@
         top: 200px;
         border: 1px solid red;
         padding: 10px;
-        border-radius: 5px;
+        border-rdius: 5px;
         width: 300px;
         z-index: 9999;
-        height: 600px;
         overflow-y: auto;
+        background-color: white;
       }
 
       .panel-wrapper .panel-wrapper-header {
         display: flex;
+        align-items: center;
       }
 
-      .panel-wrapper .panel-wrapper-header h3 {
+      .panel-wrapper .panel-wrapper-header h1 {
         flex: 1;
+      }
+
+      .panel-wrapper .panel-wrapper-header a {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
       }
 
       .settings-panel {
@@ -136,15 +143,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- <script src="../src/loader.js"></script> -->
   </head>
   <body>
-    <div class="desc">
-      <h3>The demo includes:</h3>
-      <ul>
-        <li>- Google Tag Manager script embed</li>
-        <li>- Cookie banner configurations are fetched from S3</li>
-        <li>- Customization for the banner and the modal</li>
-      </ul>
-    </div>
-
     <div class="panel-wrapper">
       <div class="panel-wrapper-header">
         <h1>Customization</h1>
@@ -152,6 +150,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     <div class="settings-panel">
       <h2>Banner</h2>
+      <button class="show-banner">show banner</button>
       <div class="setting sizing">
         <h4>Sizing</h4>
         <button>40%</button>
@@ -253,3 +252,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
+

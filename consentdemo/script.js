@@ -9,10 +9,16 @@
   var commonColors = doc.querySelector('.common');
   var toggleSettings = doc.querySelector('.toggle-settings');
   var settingsPanel = doc.querySelector('.settings-panel');
+  var showBannerBtn = doc.querySelector('.show-banner');
 
   toggleSettings.addEventListener('click', function (evt) {
     evt.preventDefault();
     settingsPanel.classList.toggle('visible');
+  });
+
+  showBannerBtn.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    Treasure.CookieControl.showBanner();
   });
 
   sizingContainer.addEventListener('click', function (evt) {
@@ -167,3 +173,4 @@
   });
 
 }(document);
+
