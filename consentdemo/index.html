@@ -51,7 +51,13 @@
         z-index: 9999;
         height: 600px;
         overflow-y: auto;
+        display: none;
       }
+
+      .settings-panel.visible {
+        display: block;
+      }
+
       .settings-panel h1 {
         border-bottom: 1px solid black;
       }
@@ -130,7 +136,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
     <div class="settings-panel">
-      <h1>Customization</h1>
+      <h1>Customization <a class="toggle-settings">Show/Hide</a></h1>
       <h2>Banner</h2>
       <div class="setting sizing">
         <h4>Sizing</h4>

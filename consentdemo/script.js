@@ -7,7 +7,13 @@
   var layoutContainer = doc.querySelector('.layout');
   var positionContainer = doc.querySelector('.position');
   var commonColors = doc.querySelector('.common');
+  var toggleSettings = doc.querySelector('.toggle-settings');
+  var settingsPanel = doc.querySelector('.settings-panel');
 
+  toggleSettings.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    settingsPanel.classList.toggle('visible');
+  });
 
   sizingContainer.addEventListener('click', function (evt) {
     evt.preventDefault();
