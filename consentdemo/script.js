@@ -18,7 +18,7 @@
 
   showBannerBtn.addEventListener('click', function (evt) {
     evt.preventDefault();
-    Treasure.CookieControl.showBanner();
+    TreasureCM.CookieControl.showBanner();
   });
 
   sizingContainer.addEventListener('click', function (evt) {
@@ -27,8 +27,8 @@
 
     var percentage = target.textContent;
 
-    if (Treasure.CookieControl.banner) {
-      Treasure.CookieControl.banner.width = percentage;
+    if (TreasureCM.CookieControl.banner) {
+      TreasureCM.CookieControl.banner.width = percentage;
     }
   });
 
@@ -38,13 +38,13 @@
 
     var currentColorScheme = {};
 
-    if (Treasure.CookieControl.banner) {
-       currentColorScheme = { ...Treasure.CookieControl.banner.colorScheme };
-    } else if (Treasure.CookieControl.preferenceModal) {
-       currentColorScheme = { ...Treasure.CookieControl.preferenceModal.colorScheme };
+    if (TreasureCM.CookieControl.banner) {
+       currentColorScheme = { ...TreasureCM.CookieControl.banner.colorScheme };
+    } else if (TreasureCM.CookieControl.preferenceModal) {
+       currentColorScheme = { ...TreasureCM.CookieControl.preferenceModal.colorScheme };
     }
 
-    var component = Treasure.CookieControl.banner ? 'banner' : Treasure.CookieControl.preferenceModal ? 'modal' : '';
+    var component = TreasureCM.CookieControl.banner ? 'banner' : TreasureCM.CookieControl.preferenceModal ? 'modal' : '';
 
     if (component) {
       if (name === 'bg') {
@@ -54,11 +54,11 @@
       }
     }
 
-    if (Treasure.CookieControl.banner) {
-      Treasure.CookieControl.banner.colorScheme = currentColorScheme;
+    if (TreasureCM.CookieControl.banner) {
+      TreasureCM.CookieControl.banner.colorScheme = currentColorScheme;
     }
-    if (Treasure.CookieControl.preferenceModal) {
-      Treasure.CookieControl.preferenceModal.colorScheme = currentColorScheme;
+    if (TreasureCM.CookieControl.preferenceModal) {
+      TreasureCM.CookieControl.preferenceModal.colorScheme = currentColorScheme;
     }
   });
 
@@ -68,13 +68,13 @@
 
     var currentColorScheme = {};
 
-    if (Treasure.CookieControl.banner) {
-       currentColorScheme = { ...Treasure.CookieControl.banner.colorScheme };
-    } else if (Treasure.CookieControl.preferenceModal) {
-       currentColorScheme = { ...Treasure.CookieControl.preferenceModal.colorScheme };
+    if (TreasureCM.CookieControl.banner) {
+       currentColorScheme = { ...TreasureCM.CookieControl.banner.colorScheme };
+    } else if (TreasureCM.CookieControl.preferenceModal) {
+       currentColorScheme = { ...TreasureCM.CookieControl.preferenceModal.colorScheme };
     }
 
-    var component = Treasure.CookieControl.banner ? 'banner' : Treasure.CookieControl.preferenceModal ? 'modal' : '';
+    var component = TreasureCM.CookieControl.banner ? 'banner' : TreasureCM.CookieControl.preferenceModal ? 'modal' : '';
     if (component) {
       if (name === 'bg') {
         currentColorScheme[component]['accept'].backgroundColor = target.value;
@@ -85,11 +85,11 @@
       }
     }
 
-    if (Treasure.CookieControl.banner) {
-      Treasure.CookieControl.banner.colorScheme = currentColorScheme;
+    if (TreasureCM.CookieControl.banner) {
+      TreasureCM.CookieControl.banner.colorScheme = currentColorScheme;
     }
-    if (Treasure.CookieControl.preferenceModal) {
-      Treasure.CookieControl.preferenceModal.colorScheme = currentColorScheme;
+    if (TreasureCM.CookieControl.preferenceModal) {
+      TreasureCM.CookieControl.preferenceModal.colorScheme = currentColorScheme;
     }
   });
 
@@ -98,13 +98,13 @@
     var name = target.name;
     var currentColorScheme = {};
 
-    if (Treasure.CookieControl.banner) {
-       currentColorScheme = { ...Treasure.CookieControl.banner.colorScheme };
-    } else if (Treasure.CookieControl.preferenceModal) {
-       currentColorScheme = { ...Treasure.CookieControl.preferenceModal.colorScheme };
+    if (TreasureCM.CookieControl.banner) {
+       currentColorScheme = { ...TreasureCM.CookieControl.banner.colorScheme };
+    } else if (TreasureCM.CookieControl.preferenceModal) {
+       currentColorScheme = { ...TreasureCM.CookieControl.preferenceModal.colorScheme };
     }
 
-    var component = Treasure.CookieControl.banner ? 'banner' : Treasure.CookieControl.preferenceModal ? 'modal' : '';
+    var component = TreasureCM.CookieControl.banner ? 'banner' : TreasureCM.CookieControl.preferenceModal ? 'modal' : '';
     if (component) {
       if (name === 'bg') {
         currentColorScheme[component]['deny'].backgroundColor = target.value;
@@ -115,12 +115,12 @@
       }
     }
 
-    if (Treasure.CookieControl.banner) {
-      Treasure.CookieControl.banner.colorScheme = currentColorScheme;
+    if (TreasureCM.CookieControl.banner) {
+      TreasureCM.CookieControl.banner.colorScheme = currentColorScheme;
     } 
 
-    if (Treasure.CookieControl.preferenceModal) {
-      Treasure.CookieControl.preferenceModal.colorScheme = currentColorScheme;
+    if (TreasureCM.CookieControl.preferenceModal) {
+      TreasureCM.CookieControl.preferenceModal.colorScheme = currentColorScheme;
     }
   });
 
@@ -130,13 +130,13 @@
 
     var currentColorScheme = {};
 
-    if (Treasure.CookieControl.banner) {
-       currentColorScheme = { ...Treasure.CookieControl.banner.colorScheme };
-    } else if (Treasure.CookieControl.preferenceModal) {
-       currentColorScheme = { ...Treasure.CookieControl.preferenceModal.colorScheme };
+    if (TreasureCM.CookieControl.banner) {
+       currentColorScheme = { ...TreasureCM.CookieControl.banner.colorScheme };
+    } else if (TreasureCM.CookieControl.preferenceModal) {
+       currentColorScheme = { ...TreasureCM.CookieControl.preferenceModal.colorScheme };
     }
 
-    var component = Treasure.CookieControl.banner ? 'banner' : Treasure.CookieControl.preferenceModal ? 'modal' : '';
+    var component = TreasureCM.CookieControl.banner ? 'banner' : TreasureCM.CookieControl.preferenceModal ? 'modal' : '';
     if (component) {
       if (name === 'bg') {
         currentColorScheme[component]['confirmation'].backgroundColor = target.value;
@@ -147,11 +147,11 @@
       }
     }
 
-    if (Treasure.CookieControl.banner) {
-      Treasure.CookieControl.banner.colorScheme = currentColorScheme;
+    if (TreasureCM.CookieControl.banner) {
+      TreasureCM.CookieControl.banner.colorScheme = currentColorScheme;
     } 
-    if (Treasure.CookieControl.preferenceModal) {
-      Treasure.CookieControl.preferenceModal.colorScheme = currentColorScheme;
+    if (TreasureCM.CookieControl.preferenceModal) {
+      TreasureCM.CookieControl.preferenceModal.colorScheme = currentColorScheme;
     }
   });
 
@@ -159,16 +159,16 @@
   layoutContainer.addEventListener('change', function (evt) {
     var value = evt.target.value;
 
-    if (Treasure.CookieControl.banner) {
-      Treasure.CookieControl.banner.layoutType = value;
+    if (TreasureCM.CookieControl.banner) {
+      TreasureCM.CookieControl.banner.layoutType = value;
     }
   });
 
   positionContainer.addEventListener('change', function (evt) {
     var value = evt.target.value;
 
-    if (Treasure.CookieControl.banner) {
-      Treasure.CookieControl.banner.layout = value;
+    if (TreasureCM.CookieControl.banner) {
+      TreasureCM.CookieControl.banner.layout = value;
     }
   });
 
