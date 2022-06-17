@@ -22,8 +22,8 @@
 
       td.fetchGlobalID(function (value) {
         console.log('yay: ', value)
-      }, function () {
-        console.log('nay')
+      }, function (msg) {
+        console.log(msg)
       })
     })
     td.trackClicks()
