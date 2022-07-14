@@ -9,7 +9,7 @@ console.log(process.env);
 
 var fakeInfo = "xxxxxxxxxx";
 
-function replaceTdInfo (path, database, host, apiKey, segmentToken) {
+function replaceTdInfo (path, database, host, apiKey, segmentToken, profileToken) {
   database = database || fakeInfo
   host = host || fakeInfo
   apiKey = apiKey || fakeInfo
@@ -23,7 +23,7 @@ function replaceTdInfo (path, database, host, apiKey, segmentToken) {
       .replace(/host:.*'/g, `host: '${host}'`)
       .replace(/writeKey:.*'/g, `writeKey: '${apiKey}'`)
       .replace(/audienceToken:.*\[.*\]/g, `audienceToken: ['${segmentToken}']`)
-      .replace(/token:.*\[.*\]/g, `token: '${segmentToken}'`)
+      .replace(/token:.*\[.*\]/g, `token: '${profileToken}'`)
 
     fs.writeFileSync(fileName, replacedData, 'utf-8')
   })
@@ -34,7 +34,8 @@ let {
   tdHost,
   apiKey,
   segmentToken,
-  c360Host
+  c360Host,
+  profileToken
 } = process.env
 
 replaceTdInfo(
@@ -50,7 +51,8 @@ replaceTdInfo(
   database,
   c360Host,
   apiKey,
-  segmentToken
+  segmentToken,
+  profileToken
 );
 
 
