@@ -23,7 +23,7 @@ function replaceTdInfo (path, database, host, apiKey, segmentToken) {
       .replace(/host:.*'/g, `host: '${host}'`)
       .replace(/writeKey:.*'/g, `writeKey: '${apiKey}'`)
       .replace(/audienceToken:.*\[.*\]/g, `audienceToken: ['${segmentToken}']`)
-      .replace(/token:.*/g, `token: ${segmentToken}`)
+      .replace(/token:.*/g, `token: '${segmentToken}'`)
 
     fs.writeFileSync(fileName, replacedData, 'utf-8')
   })
