@@ -51,8 +51,7 @@
       database: 'xxxxxxxxxx',
       writeKey: 'xxxxxxxxxx',
       host: 'xxxxxxxxxx',
-      cdpHost: 'cdp-development.in.treasuredata.com',
-      startInSignedMode: true
+      cdpHost: 'cdp-development.in.treasuredata.com'
     })
 
     var performance = window.performance
@@ -69,6 +68,7 @@
     var addrecord_start, addrecord_end
     var usersegment_start, usersegment_end
 
+    td.setAnonymousMode();
     td.set('$global', 'td_global_id', 'td_global_id')
 
     td.ready(function() {
