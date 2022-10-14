@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsoneditor@9.9.2/dist/jsoneditor.css">
+  <link rel="stylesheet" href="https://td-jssdk.s3.amazonaws.com/tduc-styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsoneditor@9.9.2/dist/jsoneditor.min.js"></script>
+  <script src="https://td-jssdk.s3.amazonaws.com/tduc.min.js"></script>
+  <script src="./form_schema.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      height: 100vh;
+    } 
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div id="editor"></div>
+    <div id="form">
+      <td-uc-form id="uc-form"></td-uc-form>
+    </div>
+  </div>
+    <script>
+        // create the editor
+        const container = document.getElementById("editor")
+        const ucform = document.querySelector('#uc-form');
+
+        const options = { 
+          mode: 'code',
+          onChange: async function() {
+            const errors = await editor.validate();
+            if (!errors || !errors.length) {
+              ucform.formSchema = editor.get();
+            }
+          }
+        }
+
+        const editor = new JSONEditor(container, options)
+
+        editor.set(full)
+
+        // get json
+        const updatedJson = editor.get()
+
+        ucform.formSchema = updatedJson;
+    </script> 
+</body>
+</html>
