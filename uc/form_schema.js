@@ -1,6 +1,6 @@
 var full = {
   metadata: {
-    host: 'xcmusrgjifad7s3rfkxwfpqx7y0jrdfh.lambda-url.us-east-1.on.aws',
+    host: 'consents-development.treasuredata.com',
     tdAccountId: 1,
     workspaceId: 1,
     formId: 3,
@@ -563,7 +563,7 @@ var preview_1 = {
 
 var preview_2 = {
   metadata: {
-    host: 'xcmusrgjifad7s3rfkxwfpqx7y0jrdfh.lambda-url.us-east-1.on.aws',
+    host: 'consents-development.treasuredata.com',
     tdAccountId: 1,
     workspaceId: 1,
     formId: 3,
