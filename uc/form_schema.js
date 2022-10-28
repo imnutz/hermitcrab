@@ -167,23 +167,7 @@ var full = {
                 },
               },
             ],
-          },
-          {
-            type: 'string',
-            name: 'rule_test',
-            rule: {
-              type: 'enable',
-              condition: {
-                control: 'brand4',
-                value: 'break_30',
-              },
-            },
-            translations: {
-              en: {
-                label: 'For testing rules',
-              },
-            },
-          },
+          }
         ],
       },
       {
