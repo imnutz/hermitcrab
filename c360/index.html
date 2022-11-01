@@ -15,7 +15,7 @@
       startInSignedMode: true
     })
 
-    //td.setSignedMode()
+    td.setAnonymousMode(true)
     //td.set('$global', 'td_global_id', 'td_global_id')
     td.set({
       a: 'say a',
@@ -54,17 +54,6 @@
     }, function () {
       console.log('user segment: nay')
     }) 
-
-    td.lookupProfile({
-      cdpHost: 'profile-api-development.treasuredata.com',
-      token: ['xxxxxxxxxx'],
-      index: 'age'
-    }, function (res) {
-      console.log('single profile: yay');
-      console.log(res);
-    }, function () {
-      console.log('single profile: nay');
-    })
   </script>
   </script>
 </head>
