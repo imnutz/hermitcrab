@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>c360-ingest-api Testing</title>
+  <title>Personalization</title>
   <style>
     .field { display: flex; flex-direction: column; justify-content: center; padding: 5px; margin-top: 10px; }
     .actions { margin-top: 20px; }
     input[type=submit] {
       border-radius: 3px;
     }
+    .fetching { display: none; }
   </style>
   <script type="text/javascript">
     !function(t,e){if(void 0===e[t]){e[t]=function(){e[t].clients.push(this),this._init=[Array.prototype.slice.call(arguments)]},e[t].clients=[];for(var r=["addRecord","blockEvents","fetchServerCookie","fetchGlobalID","fetchUserSegments","lookupProfile", "resetUUID","ready","setSignedMode","setAnonymousMode","set","trackEvent","trackPageview","trackClicks","unblockEvents"],s=0;s<r.length;s++){var c=r[s];e[t].prototype[c]=function(t){return function(){return this["_"+t]=this["_"+t]||[],this["_"+t].push(Array.prototype.slice.call(arguments)),this}}(c)}var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=("https:"===document.location.protocol?"https:":"http:")+"//imnutzs3.s3.amazonaws.com/td.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o)}}("Treasure",this);
@@ -36,6 +37,7 @@
     </div>
     <div class="actions">
       <input type="submit" value="Lookup" />
+      <span class="fetching">fetching...</span>
     </div>
   </form>
   <hr>
@@ -45,6 +47,7 @@
     var txtIndex = document.querySelector('#index');
     var form = document.querySelector('#form');
     var preResult = document.querySelector('#results');
+    var fetching = document.querySelector('.fetching');
 
     form.addEventListener('submit', function(evt) {
       evt.preventDefault();
@@ -56,13 +59,16 @@
         return alert('Please input your tokens and indexes');
       }
 
+      fetching.style.display = 'initial';
       td.lookupProfile({
         cdpHost: 'profile-api-development.treasuredata.com',
         token: tokens,
         index: indexes
       }, function(results) {
         preResult.textContent = JSON.stringify(results, null, 2);
+        fetching.style.display = 'none';
       }, function(e) {
+        fetching.style.display = 'none';
         console.error(e);
       });
     });
