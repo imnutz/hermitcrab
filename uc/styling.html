@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UC Styling</title>
+  <script src="https://td-cdn-experiment.s3.amazonaws.com/tduc/0.1/tduc.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .editor-wrapper {
+      flex: 1;
+    }
+    
+    #editor {
+      height: 80vh;
+    }
+
+    .form-wrapper {
+      flex: 1;
+    }
+    .action {
+      margin-top: 15px;
+      padding-left: 15px;
+    }
+  </style>
+  <style id="customization"></style>
+  <script type="importmap">
+    {
+      "imports": {
+        "@monaco-editor/loader": "https://unpkg.com/@monaco-editor/loader?module"
+      }
+    }
+  </script>
+  <script src="./default_style.js"></script>
+  <script src="./form_schema.js"></script>
+  <script type="module">
+    import loader from '@monaco-editor/loader'
+    // or
+    loader.config({
+      paths: {
+        vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.21.1/min/vs"
+      }
+    });
+
+    function debounce(func, timeout = 300){
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+      };
+    }
+
+    loader.init().then((monaco) => {
+      window.meditor = monaco.editor.create(document.querySelector("#editor"), {
+        value: defaultStyle,
+        language: "css"
+      });
+    });
+
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="editor-wrapper">
+      <div id="editor"></div>
+
+      <div class="action">
+        <button class="update-btn">Update</button>
+      </div>
+    </div>
+
+    <div class="form-wrapper">
+      <td-uc-form id="uc-form"></td-uc-form>
+    </div>
+  </div>
+
+  <script>
+    const ucform = document.querySelector('#uc-form');
+    ucform.formSchema = full;
+    
+    const customStyle = document.querySelector('#customization');
+
+    const updateBtn = document.querySelector('.update-btn');
+    updateBtn.addEventListener('click', (evt) => {
+      evt.preventDefault();
+
+      var css = window.meditor.getValue();
+      customStyle.textContent = css;
+    });
+  </script>
+</body>
+</html>
