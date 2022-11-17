@@ -45,6 +45,32 @@ var controls = {
             label: 'Input field'
           }
         }
+      },
+      {
+        type: 'select',
+        name: 'select_me',
+        options: ['option1', 'option2', 'option3'],
+        value: 'option2',
+        translations: {
+          en: {
+            optionLabels: ['Option1', 'Option2', 'Option3'],
+            label: 'Dropdown',
+          },
+        },
+      },
+      {
+        type: 'boolean',
+        name: 'agreement_0',
+        checked: true,
+        translations: {
+          en: {
+            label: 'Checkbox with desc',
+            description: 'Experience Brand2 innovation...',
+          },
+        }
+      },
+      {
+        type: 'hr'
       }
     ],
   },
