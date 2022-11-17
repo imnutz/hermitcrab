@@ -19,7 +19,7 @@
     }
 
     .notes {
-      padding: 15px;
+      padding: 15px 5px;
       background-color: #fd7e14;
       color: black;
     }
@@ -31,17 +31,38 @@
       height: 100vh;
     } 
 
+    .nav {
+      display: flex;
+    }
+
+    .links {
+      display: flex;
+      padding: 5px;
+    }
+
+    .links a {
+      display: block;
+      padding: 5px 15px;
+    }
   </style>
 </head>
 <body>
-  <div class="notes">
-    <pre>
+  <div class="nav">
+    <pre class="notes">
       This is an example of full form schema configuration, which includes the following features:
       - Layouts and nested layouts:
       - Controls, such as: input, select, checkbox, radio, markdown text
       - Validations
       - Rules: enable/disable, hide/show
     </pre>
+
+    <div class="links">
+      <a href="/uc/vert_layout.html">Vertical Layout</a>
+      <a href="/uc/hor_layout.html">Horizontal Layout</a>
+      <a href="/uc/hor_group_layout.html">Horizontal Group Layout</a>
+      <a href="/uc/group_layout.html">Group Layout</a>
+      <a href="/uc/controls.html">Controls</a>
+    </div>
   </div>
   <div class="wrapper">
     <div id="editor"></div>
