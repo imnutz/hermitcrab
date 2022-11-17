@@ -70,6 +70,26 @@ var controls = {
         }
       },
       {
+        type: 'radio',
+        value: 'radio_value',
+        name: 'agreement_1',
+        checked: true,
+        translations: {
+          en: {
+            label: 'Radio with desc',
+            description: 'Ya, I mean it: As many as you have',
+          },
+        },
+      },
+      {
+        type: 'markdown',
+        translations: {
+          en: {
+            label: 'This is a **markdown** text with link [TreasureData](https://treasuredata.com)'
+          }
+        }
+      },
+      {
         type: 'hr'
       }
     ],
