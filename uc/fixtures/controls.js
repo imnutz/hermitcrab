@@ -38,6 +38,28 @@ var controls = {
       },
       {
         type: 'string',
+        options: {
+          format: 'heading2'
+        },
+        translations: {
+          en: {
+            label: 'Heading 2'
+          }
+        }
+      },
+      {
+        type: 'string',
+        options: {
+          format: 'heading3'
+        },
+        translations: {
+          en: {
+            label: 'Heading 3'
+          }
+        }
+      },
+      {
+        type: 'string',
         value: 'abc@gmail.com',
         name: 'input_field',
         translations: {
