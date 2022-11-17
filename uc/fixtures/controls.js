@@ -85,7 +85,7 @@ var controls = {
         type: 'markdown',
         translations: {
           en: {
-            label: 'This is a **markdown** text with link [TreasureData](https://treasuredata.com)'
+            text: 'This is a **markdown** text with link [TreasureData](https://treasuredata.com)'
           }
         }
       },
