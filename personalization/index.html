@@ -52,6 +52,10 @@
     form.addEventListener('submit', function(evt) {
       evt.preventDefault();
 
+      if (!txtToken.value || !txtIndex.value) {
+        return alert('Please input your tokens and indexes');
+      }
+
       var tokens = txtToken.value.split(',');
       var indexes = txtIndex.value.split(',');
 
