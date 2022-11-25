@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unversal Consent POC</title>
+  <script src="https://td-cdn-experiment.s3.amazonaws.com/tduc/0.1/tduc.js"></script>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    }
+
+    ul, li { list-style: none; }
+    a, a:hover { text-decoration: none; }
+
+    .page {
+      display: grid;
+      grid-template-rows: 200px auto 80px;
+      grid-template-columns: 50px auto 50px;
+      grid-template-areas:
+        "header header header"
+        ". main ."
+        "footer footer footer";
+      height: 100vh;
+    }
+
+    header {
+      background-image: url('./about-hdr.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      grid-area: header;
+    }
+
+    footer {
+      background-color: #2d2d2d;
+      color: white;
+      grid-area: footer;
+      display: flex;
+      align-items: center;
+    }
+
+    nav, main, footer {
+      padding: 15px;
+    }
+
+    .page-content {
+      display: grid;
+      grid-template-columns: 20% auto;
+      column-gap: 20px;
+      grid-area: main;
+      width: 1024px;
+      justify-self: center;
+    }
+
+    .page-content main {
+      flex: 1;
+    }
+
+    nav {
+      border-right: 1px solid #295381;
+    }
+
+    nav ul { margin-top: 15px; }
+
+    ul li {
+      padding: 10px 8px;
+      border-radius: 3px;
+      display: flex;
+      cursor: pointer;
+    }
+
+    ul li:hover,
+    ul li.selected {
+      background-color: rgba(235, 236, 240, 0.5);
+      color: #295381;
+    }
+
+    ul li:hover a,
+    ul li.selected a {
+      color: #295381;
+    }
+
+    ul li:before {
+      content: '\203A';
+      width: 10px;
+    }
+
+    ul li a {
+      display: block;
+      color: black;
+    }
+
+    .brand {
+      background-color: #295381;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    main h3 {
+      font-size: 32px;
+      color: #295381;
+      border-bottom: 1px solid #295381;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header></header>
+    <div class="page-content">
+      <nav>
+        <h1 class="brand">Brand ABC</h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">About</a></li>
+          <li class="selected"><a href="#">Preference center</a></li>
+        </ul>
+      </nav>
+      <main>
+        <h3>Preference center</h3>
+        <td-uc-form id="uc-form"></td-uc-form> 
+      </main>
+    </div>
+    <footer>
+      Copyright &copy; 2022 Brand ABC
+    </footer>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
