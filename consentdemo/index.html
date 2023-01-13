@@ -6,132 +6,55 @@
     <title>TD Cookie Banner</title>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Nunito">
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      body, h1, h3, h4 {
-        margin: 0;
-        padding: 0
-      }
+    <link rel="stylesheet" href="/consentdemo/style.css">
 
-      body {
-        width: 100vw;
-        height:100vh;
-        background-image: url('consentdemo/treasurebikes.png');
-        background-repeat: no-repeat;
-        font-family: 'Tangerine', serif;
-      }
+    <script type="text/javascript">
+    !function(t,e){if(void 0===e[t]){e[t]=function(){e[t].clients.push(this),this._init=[Array.prototype.slice.call(arguments)]},e[t].clients=[];for(var r=["addRecord","blockEvents","fetchServerCookie","fetchGlobalID","fetchUserSegments","resetUUID","ready","setSignedMode","setAnonymousMode","set","trackEvent","trackPageview","trackClicks","unblockEvents"],s=0;s<r.length;s++){var c=r[s];e[t].prototype[c]=function(t){return function(){return this["_"+t]=this["_"+t]||[],this["_"+t].push(Array.prototype.slice.call(arguments)),this}}(c)}var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.treasuredata.com/sdk/3.1/td.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o)}}("Treasure",this);
+    </script>
 
-      .desc {
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        border: 1px solid green;
-        padding: 10px;
-        border-radius: 5px;
-        width: 300px;
-        z-index: 9999;
-      }
-      .desc ul {
-        list-style: none;
-      }
-      .desc ul li {
-        padding: 3px 0;
-      }
-
-      .panel-wrapper {
-        position: absolute;
-        right: 5px;
-        top: 200px;
-        border: 1px solid red;
-        padding: 10px;
-        border-rdius: 5px;
-        width: 300px;
-        z-index: 9999;
-        overflow-y: auto;
-        background-color: white;
-      }
-
-      .panel-wrapper .panel-wrapper-header {
-        display: flex;
-        align-items: center;
-      }
-
-      .panel-wrapper .panel-wrapper-header h1 {
-        flex: 1;
-      }
-
-      .panel-wrapper .panel-wrapper-header a {
-        color: blue;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-
-      .settings-panel {
-        display: none;
-      }
-      .settings-panel.visible {
-        display: block;
-      }
-
-      .settings-panel h1 {
-        border-bottom: 1px solid black;
-      }
-
-      .settings-panel .setting {
-        margin: 10px 0;
-      }
-      .settings-panel .setting h3 {
-        padding: 5px 0;
-        margin-bottom: 20px;
-        border-bottom: 1px dotted black;
-      }
-
-      
-      td-cookie-banner {
-        --banner-font-family: 'Nunito', serif;
-      }
-
-      td-privacy-button {
-        --privacy-button-font-family: 'Nunito', serif;
-      }
-
-      td-cookie-modal {
-        --modal-font-family: 'Nunito', serif;
-      }
-      
-
-      .common .bg,
-      .common .button-color,
-      .colors .bg,
-      .colors .text-color,
-      .colors .border-color{
-        display: flex;
-        align-items: center;
-        padding: 3px 5px;
-        border: 1px solid black;
-        border-radius: 3px;
-        margin: 5px 0;
-      }
-
-      .common .bg label,
-      .common .button-color label,
-      .colors .bg label,
-      .colors .text-color label,
-      .colors .border-color label {
-        flex: 1;
-      }
-    </style>
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.0.0/webcomponents-loader.js"></script>
-    <script src="https://www.unpkg.com/lit@2.2.2/polyfill-support.js"></script>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W76XRB3');</script>
-<!-- End Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T569NCS');</script>
+    <!-- End Google Tag Manager -->
+
+    <!--script src="../../build/loader.js"></script-->
+    <script>
+      var td = new Treasure({
+        database: '_sondo',
+        writeKey: '1/92397e7a50e6d50b82c2383fc0870f3cfe34b8b3',
+        host: 'in.treasuredata.com',
+        cdpHost: 'cdp-development.in.treasuredata.com',
+        startInSignedMode: true
+      });
+
+      var isJsSdkReady = false;
+      td.ready(function() {
+        isJsSdkReady = true;
+      });
+
+      var tdMethodQueue = tdMethodQueue || [];
+      tdMethodQueue.push(['ready', function() {
+        console.log('Cookie banner is ready!');
+        if (!isJsSdkReady) {
+          td.ready(function() {
+            TreasureCM.CookieControl.setClientId(td.client.track.uuid);
+            isJsSdkReady = true;
+          });
+        } else {
+          console.log('JS SDK is ready');
+          TreasureCM.CookieControl.setClientId(td.client.track.uuid);
+        }
+      }]);
+      tdMethodQueue.push(['set', {
+          newProp1: 'new prop 1 - aha',
+          newProp2: 'new prop 2 - aha'
+      }]);
+
+      tdMethodQueue.push(['set', 'newProp3', 'new prop 3- aha']);
+    </script>
   </head>
   <body>
     <div class="panel-wrapper">
@@ -228,19 +151,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     </div>
     </div>
-    <script src="consentdemo/script.js"></script>
+    <script src="/consentdemo/script.js"></script>
+
     <!-- Google Tag Manager (noscript) -->
-    <!--noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF937S6"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript-->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T569NCS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-<!-- Google Tag Manager (noscript) -->
-<!--noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKKNFQ5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript-->
-<!-- End Google Tag Manager (noscript) -->
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W76XRB3"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPDSQ6C"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGT8HK4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
+
 
