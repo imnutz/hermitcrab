@@ -4,6 +4,7 @@
   height: 25px;
   cursor: pointer;
   position: relative;
+  margin-right: 5px;
 }
 
 .td-toggler-wrapper input[type="checkbox"] {
