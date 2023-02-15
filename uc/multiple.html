@@ -48,7 +48,12 @@
       background-color: green;
     }
 
-    .wrapper input#tab1:checked+label {
+    .wrapper input#tab1:checked~.tab-panel-wrapper .tab-panel:nth-child(1) {
+      display: block;
+    }
+
+    .wrapper input#tab2:checked~.tab-panel-wrapper .tab-panel:nth-child(2) {
+      display: block;
     }
   </style>
 </head>
