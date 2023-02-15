@@ -4,10 +4,29 @@
   <meta charset="UTF-8">
   <title></title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsoneditor@9.9.2/dist/jsoneditor.css">
-  <link rel="stylesheet" href="/uc/style.css">
   <script src="https://cdn.jsdelivr.net/npm/jsoneditor@9.9.2/dist/jsoneditor.min.js"></script>
   <script src="https://td-cdn-experiment.s3.amazonaws.com/tduc/0.1/tduc.js"></script>
   <script src="/uc/fixtures/group_layout.js"></script>
+  <style>
+    .tab-panel-wrapper {
+      width: 800px;
+      height: 600px;
+      border: 1px solid black;
+    }
+
+    .tab-panel-wrapper .tab-panel:nth-child(1){
+      background-color: red;
+    }
+    .tab-panel-wrapper .tab-panel:nth-child(2){
+      display: none;
+    }
+
+    .wrapper input[type=radio"] {
+      opacity: 0;
+      position: fixed;
+      width: 0;
+    }
+  </style>
 </head>
 <body>
   <div class="nav">
