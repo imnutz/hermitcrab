@@ -41,7 +41,7 @@
 
 .td-toggler-wrapper input[type="checkbox"]:checked+.td-toggler-slider .td-toggler-knob {
   left: calc(100% - 19px - 3px);
-  background-color: green;
+  background-color: #2e732e;
 }
 
 .td-toggler-wrapper .td-toggler-slider {
@@ -52,12 +52,12 @@
 }
 
 .td-toggler-wrapper .td-toggler-knob {
-  width: calc(25px - 6px);
-  height: calc(25px - 6px);
+  width: 19px;
+  height: 19px;
   border-radius: 5px;
   left: 3px;
   top: 3px;
-  background-color: gray;
+  background-color: #f1f1f1;
 }
 
 .td-group-layout .td-layout-header .hint {
