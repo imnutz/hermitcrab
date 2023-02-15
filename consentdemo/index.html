@@ -6,7 +6,7 @@
     <title>TD Cookie Banner</title>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Nunito">
-    <link rel="stylesheet" href="/consentdemo/style.css">
+    <link rel="stylesheet" href="/cookiebanner/style.css">
 
     <script type="text/javascript">
     !function(t,e){if(void 0===e[t]){e[t]=function(){e[t].clients.push(this),this._init=[Array.prototype.slice.call(arguments)]},e[t].clients=[];for(var r=["addRecord","blockEvents","fetchServerCookie","fetchGlobalID","fetchUserSegments","resetUUID","ready","setSignedMode","setAnonymousMode","set","trackEvent","trackPageview","trackClicks","unblockEvents"],s=0;s<r.length;s++){var c=r[s];e[t].prototype[c]=function(t){return function(){return this["_"+t]=this["_"+t]||[],this["_"+t].push(Array.prototype.slice.call(arguments)),this}}(c)}var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.treasuredata.com/sdk/3.1/td.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o)}}("Treasure",this);
@@ -22,12 +22,21 @@
 
     <!--script src="../../build/loader.js"></script-->
     <script>
+      function setServerSideCookie() {
+        td.fetchServerCookie(function (value) {
+          TreasureCM.CookieControl.set({
+            server_side_cookie: value
+          });
+        })
+      }
+
       var td = new Treasure({
         database: '_sondo',
         writeKey: '1/92397e7a50e6d50b82c2383fc0870f3cfe34b8b3',
         host: 'in.treasuredata.com',
         cdpHost: 'cdp-development.in.treasuredata.com',
-        startInSignedMode: true
+        startInSignedMode: true,
+        useServerSideCookie: true
       });
 
       var isJsSdkReady = false;
@@ -41,19 +50,23 @@
         if (!isJsSdkReady) {
           td.ready(function() {
             TreasureCM.CookieControl.setClientId(td.client.track.uuid);
+            setServerSideCookie();
             isJsSdkReady = true;
           });
         } else {
           console.log('JS SDK is ready');
           TreasureCM.CookieControl.setClientId(td.client.track.uuid);
+          setServerSideCookie();
         }
       }]);
+
       tdMethodQueue.push(['set', {
           newProp1: 'new prop 1 - aha',
           newProp2: 'new prop 2 - aha'
       }]);
 
       tdMethodQueue.push(['set', 'newProp3', 'new prop 3- aha']);
+
     </script>
   </head>
   <body>
@@ -151,18 +164,10 @@
 
     </div>
     </div>
-    <script src="/consentdemo/script.js"></script>
+    <script src="/cookiebanner/script.js"></script>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T569NCS"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPDSQ6C"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGT8HK4"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
   </body>
