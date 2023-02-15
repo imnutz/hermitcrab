@@ -12,6 +12,15 @@
       width: 800px;
       height: 600px;
       border: 1px solid black;
+      position: relative;
+    }
+
+    .tab-panel-wrapper .tab-panel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .tab-panel-wrapper .tab-panel:nth-child(1){
@@ -21,36 +30,35 @@
       display: none;
     }
 
-    .wrapper input[type=radio"] {
+    .wrapper input[type="radio"] {
       opacity: 0;
       position: fixed;
       width: 0;
     }
+
+    .wrapper label {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: lightgray;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .wrapper input[type="radio"]:checked+label {
+      background-color: green;
+    }
+
+    .wrapper input#tab1:checked+label {
+    }
   </style>
 </head>
 <body>
-  <div class="nav">
-    <h1 class="notes">
-      Group layout
-    </h1>
-
-    <div class="links">
-      <a href="/uc?direct_link=c1c9d055-e005-45b7-bd9e-caddc5e912ac">Full</a>
-      <a href="/uc/vert_layout.html?direct_link=c1c9d055-e005-45b7-bd9e-caddc5e912ac">Vertical Layout</a>
-      <a href="/uc/hor_layout.html?direct_link=c1c9d055-e005-45b7-bd9e-caddc5e912ac">Horizontal Layout</a>
-      <a href="/uc/hor_group_layout.html?direct_link=c1c9d055-e005-45b7-bd9e-caddc5e912ac">Horizontal Group Layout</a>
-      <a href="/uc/group_layout.html?direct_link=c1c9d055-e005-45b7-bd9e-caddc5e912ac">Group Layout</a>
-      <a href="/uc/controls.html?direct_link=c1c9d055-e005-45b7-bd9e-caddc5e912ac">Controls</a>
-      <a href="/uc/multiple.html?direct_link=c1c9d055-e005-45b7-bd9e-caddc5e912ac">Multiple</a>
-    </div>
-  </div>
-
   <div class="wrapper">
     <input type="radio" name="tab1" id="tab1">
     <label for="tab1">Brand A</label>
 
     <input type="radio" name="tab2" id="tab2">
-    <label for="tab1">Brand B</label>
+    <label for="tab2">Brand B</label>
 
     <div class="tab-panel-wrapper">
       <div class="tab-panel">
