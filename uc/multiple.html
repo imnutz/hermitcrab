@@ -9,10 +9,11 @@
   <script src="/uc/fixtures/group_layout.js"></script>
   <style>
     .tab-panel-wrapper {
-      width: 800px;
+      width: 100%;
       height: 600px;
       border: 1px solid black;
       position: relative;
+      overflow: auto;
     }
 
     .tab-panel-wrapper .tab-panel {
@@ -68,10 +69,18 @@
 
     <div class="tab-panel-wrapper">
       <div class="tab-panel">
-        <td-uc-form id="uc-form-1" embedded></td-uc-form>
+        <td-uc-form 
+          id="uc-form-1" 
+          jsonUrl="https://api-development-consent-config.treasuredata.com/api/universal_consent/workspaces/1/forms/3/settings" 
+          embedded>
+        </td-uc-form>
       </div>
       <div class="tab-panel">
-        <td-uc-form id="uc-form-2" embedded></td-uc-form>
+        <td-uc-form 
+          id="uc-form-2" 
+          jsonUrl="https://api-development-consent-config.treasuredata.com/api/universal_consent/workspaces/1/forms/3/settings" 
+          embedded>
+        </td-uc-form>
       </div>
     </div>
   </div>
