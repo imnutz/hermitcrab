@@ -15,7 +15,10 @@
     uncheckAll.addEventListener('click', (evt) => {
       var target = evt.target;
 
-      console.log(target.checked);
+      if (target.checked) {
+        form1.uncheckAll();
+        form2.uncheckAll();
+      }
     });
   }
 }();
