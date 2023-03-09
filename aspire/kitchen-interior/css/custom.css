@@ -1,0 +1,24 @@
+/*-- Use For Custom Styling --*/
+
+header a.logo img {
+    max-width: 120px;
+}
+
+.line:hover:after, .line.active:after {
+    border-color: #64a522;
+}
+
+.services-slider .owl-item.current .service-box {
+    background: #64a522;
+}
+
+.heading-area .heading {
+    color: #64a522;
+}
+.contact-dots{
+    height: auto;
+}
+
+.contact-sec .contact-details ul li {
+    margin-bottom: 15px;
+}
