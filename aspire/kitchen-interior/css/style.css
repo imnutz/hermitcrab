@@ -1310,6 +1310,7 @@ header a.logo img {
 }
 
 .contact-dots{
+    height: 430px;
     width: 490px;
     position: absolute;
     top: -25px;

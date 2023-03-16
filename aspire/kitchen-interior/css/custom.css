@@ -22,3 +22,34 @@ header a.logo img {
 .contact-sec .contact-details ul li {
     margin-bottom: 15px;
 }
+
+.contact-sec .contact-details {
+    width: 100%;
+    margin-left: 0;
+}
+
+.experience .experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+
+.experience .experience-container a {
+    display: inline-block;
+}
+
+.experience .experience-container img {
+    max-width: initial;
+    width: 240px;
+    height: 160px;
+}
+
+.thumbnail {
+    padding: 10px;
+    box-shadow: 0px 0px 5px 0px lightgray;
+}
+
+#services .thumbnail {
+    margin-top: 25px;
+}

@@ -6,22 +6,27 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <!-- Page Title -->
     <title>AspireOffice</title>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
     <!-- Favicon -->
-    <link href="aspire/vendor/img/favicon.png" rel="icon">
+    <link href="vendor/img/favicon.png" rel="icon">
     <!-- Bundle -->
-    <link rel="stylesheet" href="aspire/vendor/css/bundle.min.css">
+    <link rel="stylesheet" href="vendor/css/bundle.min.css">
     <!-- Revolution Slider CSS Files -->
-    <link rel="stylesheet" href="aspire/vendor/css/revolution-settings.min.css">
+    <link rel="stylesheet" href="vendor/css/revolution-settings.min.css">
     <!-- Plugin Css -->
-    <link href="aspire/vendor/css/LineIcons.min.css" rel="stylesheet">
-    <link href="aspire/vendor/css/jquery.fancybox.min.css" rel="stylesheet">
-    <link href="aspire/vendor/css/owl.carousel.min.css" rel="stylesheet">
-    <link href="aspire/vendor/css/wow.css" rel="stylesheet">
-    <link rel="stylesheet" href="aspire/vendor/css/cubeportfolio.min.css">
-    <link href="aspire/kitchen-interior/css/line-awesome.min.css" rel="stylesheet">
+    <link href="vendor/css/LineIcons.min.css" rel="stylesheet">
+    <link href="vendor/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="vendor/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="vendor/css/wow.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/css/cubeportfolio.min.css">
+    <link href="kitchen-interior/css/line-awesome.min.css" rel="stylesheet">
     <!-- Style Sheet -->
-    <link href="aspire/kitchen-interior/css/style.css" rel="stylesheet">
-    <link href="aspire/kitchen-interior/css/custom.css" rel="stylesheet">
+    <link href="kitchen-interior/css/style.css" rel="stylesheet">
+    <link href="kitchen-interior/css/custom.css" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
@@ -43,16 +48,15 @@
         <div class="container">
             <a href="/" title="Aspire Office Logo" class="logo">
                 <!--Logo Default-->
-                <img src="aspire/kitchen-interior/images/logo.png" title="logo" alt="AspireOffice logo" class="logo-default">
+                <img src="kitchen-interior/images/logo.png" title="logo" alt="AspireOffice logo" class="logo-default">
             </a>
 
             <!--Nav Links-->
             <div class="collapse navbar-collapse" id="megaone">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link scroll line" href="#slider">Home</a>
                     <a class="nav-link scroll line" href="#about">Giới thiệu</a>
-                    <a class="nav-link scroll line" href="#portfolio">Trải nghiệm</a>
-                    <a class="nav-link scroll line" href="#testimonials">Dịch vụ</a>
+                    <a class="nav-link scroll line" href="#experience">Trải nghiệm</a>
+                    <a class="nav-link scroll line" href="#services">Dịch vụ</a>
                     <a class="nav-link scroll line" href="#contact">Liên hệ</a>
                 </div>
             </div>
@@ -78,21 +82,18 @@
             <span class="btn-close" id="btn_sideNavClose"><i></i><i></i></span>
             <a href="index-kitchen-interior.html" title="Logo" class="logo side-logo">
                 <!--Logo Default-->
-                <img src="aspire/kitchen-interior/images/logo-white.png" alt="logo">
+                <img src="kitchen-interior/images/logo-white.png" alt="logo">
             </a>
             <nav class="side-nav w-100">
                 <ul class="navbar-nav side-navbar">
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#slider">Home</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link scroll" href="#about">Giới thiệu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#portfolio">Trải nghiệm</a>
+                        <a class="nav-link scroll" href="#experience">Trải nghiệm</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#testimonials">Dịch vụ</a>
+                        <a class="nav-link scroll" href="#services">Dịch vụ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scroll" href="#contact">Liên hệ</a>
@@ -114,68 +115,6 @@
     <a id="close_side_menu" href="javascript:void(0);"></a>
 </header>
 <!-- End Header -->
-
-<!-- Start Slider -->
-<section class="slider position-relative" id="slider">
-    <div class="row">
-        <div class="col-12">
-            <div id="sync1" class="owl-carousel owl-theme">
-                <!-- Item-1 -->
-                <div class="item">
-                    <img src="aspire/kitchen-interior/images/a1.png" alt="Slider-Image">
-                </div>
-                <!-- Item-2 -->
-                <div class="item">
-                    <img src="aspire/kitchen-interior/images/a2.png" alt="Slider-Image">
-                </div>
-                <!-- Item-3 -->
-                <div class="item">
-                    <img src="aspire/kitchen-interior/images/a4.png" alt="Slider-Image">
-                </div>
-                <!-- Item-4 -->
-                <div class="item">
-                    <img src="aspire/kitchen-interior/images/a1.png" alt="Slider-Image">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Slider -->
-
-<!-- Some Services -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div id="sync2" class="owl-carousel owl-theme services-slider wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s">
-                <!-- Item-1 -->
-                <div class="item">
-                    <div class="service-box">
-                        <span><i class="fa fa-clipboard"></i></span>
-                        <h4 class="my-3">Không gian</h4>
-                        <p>Không gian làm việc yên tĩnh và thoải mái với chất lượng dịch vụ cao cấp</p>
-                    </div>
-                </div>
-                <!-- Item-2 -->
-                <div class="item">
-                    <div class="service-box">
-                        <span><i class="fa fa-star"></i></span>
-                        <h4 class="my-3">Tiện ích</h4>
-                        <p>Tiện ích hiện đại: quán cafe, BBQ sân thượng, khu để xe rộng rãi</p>
-                    </div>
-                </div>
-                <!-- Item-3 -->
-                <div class="item">
-                    <div class="service-box">
-                        <span><i class="fa fa-globe"></i></span>
-                        <h4 class="my-3 ">Di chuyển</h4>
-                        <p>Chỉ cần 15 phút để đi đến sân bay, trung tâm thành phố và các khu vực lân cận</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Some Services -->
 
 <!-- Start About -->
 <section class="about" id="about">
@@ -241,10 +180,57 @@
 <!-- End About -->
 
 <!-- Start Portfolio -->
-<section id="portfolio" class="cube-portfolio1 padding-top">
+<section id="experience" class="experience padding-top">
     <div class="container">
+        <div class="row text-center">
+            <div class="col-12 col-md-10 col-lg-8 offset-md-1 offset-lg-2 wow zoomIn heading-area" data-wow-duration="1s" data-wow-delay=".1s">
+                <h3 class="heading text-center">Trải nghiệm</h3>
+            </div>
+        </div>
+
+        <div class="experience-container">
+            <a href="../kitchen-interior/images/aspire/front.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/front.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire1.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire1.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire2.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire2.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire3.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire3.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire4.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire4.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire5.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire5.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire6.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire6.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire7.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire7.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire8.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire8.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire9.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire9.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire10.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire10.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire11.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire11.jpg" />
+            </a>
+            <a href="../kitchen-interior/images/aspire/aspire12.jpg" data-fancybox="gallery" data-fancybox data-caption="front">
+                <img src="../kitchen-interior/images/aspire/aspire12.jpg" />
+            </a>
+        </div>
         <!--Heading-->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <div class="experience-box heading-area">
                     <h3 class="heading">Trải nghiệm Aspire</h3>
@@ -265,13 +251,14 @@
                     <p class="text">Tận hưởng ngay một không gian văn phòng độc đáo, chất lượng với giá cả phải chăng. Tiết kiệm các chi phí (thuê mướn các trang thiết bị, tiếp tân, bảo vệ...)  để tập trung phát triển doanh nghiệp của bạn. Bạn sẽ quản lý các chi phí hàng ngày một cách hiệu quả hơn vì chúng tôi đã bao gồm các chi phí bảo trì, vệ sinh, v.v... trong tiền thuê hàng tháng. Ngoài ra, chúng tôi cung cấp thêm dịch vụ quản lý hành chính và kế toán để giúp bạn cắt giảm chi phí và thuận tiện hơn trong công việc.</p>
                 </div>
             </div>
-        </div>
+        </div> -->
+
     </div>
 </section>
 <!-- End Portfolio -->
 
 <!-- Start Testimonials -->
-<section class="our-clients" id="testimonials">
+<section class="our-clients" id="services">
     <div class="container">
         <div class="row wow fadeInUp" data-wow-duration="1.5s">
             <div class="col-12">
@@ -281,6 +268,11 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-6">
+                    <div class="thumbnail">
+                        <img src="../kitchen-interior/images/service2.jpg" alt="" srcset="">
+                    </div>
+                </div>
                 <div class="col-6">
                     <div class="heading-area">
                         <h4 class="heading">Văn phòng cho thuê</h4>
@@ -311,6 +303,8 @@
                         </ul>
                     </div>
                 </div> 
+            </div>
+            <div class="row">
                 <div class="col-6">
                     <div class="heading-area">
                         <h4 class="heading">Văn phòng ảo</h4>
@@ -333,6 +327,11 @@
                         </ul>
                     </div>
                 </div> 
+                <div class="col-6">
+                    <div class="thumbnail">
+                        <img src="../kitchen-interior/images/service1.jpg" alt="" srcset="">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -343,10 +342,9 @@
 <section class="contact-sec" id="contact">
     <div class="container">
         <div class="row align-items-top">
-            <div class="col-lg-5 order-lg-2 wow fadeInRight">
+            <div class="col-12 wow fadeInRight">
                 <div class="contact-details heading-area">
-                    <div class="contact-dots" data-dots=""></div>
-                    <h4 class="heading main-font">Head Office</h4>
+                    <h4 class="heading main-font">Liên hệ</h4>
                     <p class="text alt-font">There are many variations of passages of Lorem Ipsum available, but the majority have suffered .</p>
                     <ul>
                         <li><i aria-hidden="true" class="las la-map-marker"></i> 466/4 Le Quang Dinh, Ward 11, Binh Thanh District, HCMC, Vietnam</li>
@@ -359,42 +357,6 @@
                         <li><i aria-hidden="true" class="las la-paper-plane"></i>contact@itsybits.com</li>
                     </ul>
                 </div>
-            </div>
-
-            <div class="col-lg-7 mt-4 pt-3 mt-lg-0 pt-lg-0 wow fadeInLeft">
-                <!--Heading-->
-                <div class="heading-area pb-2">
-                    <h2 class="heading">Let’s Get In Touch</h2>
-                </div>
-                <!--Contact Form-->
-                <form class="contact-form" id="contact-form-data">
-                    <div class="row">
-                        <!--Result-->
-                        <div class="col-12" id="result"></div>
-                        <!--Left Column-->
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <input class="form-control" id="your_name" name="userName" placeholder="Your Name" type="text">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="your_email" name="userEmail" placeholder="Email Address" type="email">
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" id="subject" name="userSubject" placeholder="Subject" type="text">
-                            </div>
-                        </div>
-                        <!--Right Column-->
-                        <div class="col-md-7">
-                            <div class="form-group">
-                                <textarea class="form-control" id="message" name="userMessage" placeholder="Your Message"></textarea>
-                            </div>
-                        </div>
-                        <!--Button-->
-                        <div class="col-md-12">
-                            <a href="javascript:void(0);" class="btn btn-medium btn-rounded btn-green w-100 contact_btn main-font mt-4">Send Message</a>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
@@ -426,8 +388,7 @@
             </div>
             <!--Text-->
             <div class="col-md-6 text-md-right">
-                <p class="company-about fadeIn pr-0 pr-md-1">&copy; 2023 MegaOne. Made With Love By <a href="javascript:void(0);">Themesindustry</a>
-                </p>
+                <p class="company-about fadeIn pr-0 pr-md-1">&copy; 2023 Itsybits.</p>
             </div>
         </div>
     </div>
@@ -435,21 +396,21 @@
 <!-- End Footer -->
 
 <!-- JavaScript -->
-<script src="aspire/vendor/js/bundle.min.js"></script>
+<script src="vendor/js/bundle.min.js"></script>
 <!-- Plugin Js -->
-<script src="aspire/vendor/js/morphext.min.js"></script>
-<script src="aspire/vendor/js/jquery.appear.js"></script>
-<script src="aspire/vendor/js/jquery.fancybox.min.js"></script>
-<script src="aspire/vendor/js/owl.carousel.min.js"></script>
-<script src="aspire/vendor/js/wow.min.js"></script>
-<script src="aspire/vendor/js/jquery.cubeportfolio.min.js"></script>
+<script src="vendor/js/morphext.min.js"></script>
+<script src="vendor/js/jquery.appear.js"></script>
+<script src="vendor/js/jquery.fancybox.min.js"></script>
+<script src="vendor/js/owl.carousel.min.js"></script>
+<script src="vendor/js/wow.min.js"></script>
+<script src="vendor/js/jquery.cubeportfolio.min.js"></script>
 <!-- Map JS -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4fusEY9kSwNHgtK8KOgyoTsyP5Tb2NXo"></script>
-<script src="aspire/kitchen-interior/js/map.js"></script>
+<script src="kitchen-interior/js/map.js"></script>
 
 <!-- CUSTOM JS -->
-<script src="aspire/vendor/js/contact_us.js"></script>
-<script src="aspire/kitchen-interior/js/script.js"></script>
+<script src="vendor/js/contact_us.js"></script>
+<script src="kitchen-interior/js/script.js"></script>
 
 </body>
 </html>
