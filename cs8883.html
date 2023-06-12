@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>cs8883</title>
+   <script type="text/javascript">
+  !function(t,e){if(void 0===e[t]){e[t]=function(){e[t].clients.push(this),this._init=[Array.prototype.slice.call(arguments)]},e[t].clients=[];for(var r=["addRecord","blockEvents","fetchServerCookie","fetchGlobalID","fetchUserSegments","resetUUID","ready","setSignedMode","setAnonymousMode","set","trackEvent","trackPageview","trackClicks","unblockEvents"],s=0;s<r.length;s++){var c=r[s];e[t].prototype[c]=function(t){return function(){return this["_"+t]=this["_"+t]||[],this["_"+t].push(Array.prototype.slice.call(arguments)),this}}(c)}var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=("https:"===document.location.protocol?"https:":"http:")+"//imnutzs3.s3.amazonaws.com/td.min.js";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(n,o)}}("Treasure",this);
+  // Configure an instance for your database
+  var initParams = {
+    host: 'us01.records.in.treasuredata.com',
+    writeKey: '11519/f6bd777476dd356d8b226cd0de6f33ec9affa81b',
+    database: 'mochizuki',
+    useNewJavaScriptEndpoint: true,
+    startInSignedMode: true
+  };
+
+  var td = new Treasure(initParams);
+
+  // Enable cross-domain tracking
+  td.set('$global','td_global_id','td_global_id');
+
+  // postWithTimeoutを発火するためのtweak
+  td.set('$global', 'tag', 'a');
+  td.set('$global', 'href', '#');
+
+  td.trackPageview('clicked');
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
