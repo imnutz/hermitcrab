@@ -1,0 +1,111 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+  // TD JS SDK init
+  !function(t,e){if(void 0===e[t]){e[t]=function(){e[t].clients.push(this),this._init=[Array.prototype.slice.call(arguments)]},e[t].clients=[];for(var r=function(t){return function(){return this["_"+t]=this["_"+t]||[],this["_"+t].push(Array.prototype.slice.call(arguments)),this}},s=["blockEvents","unblockEvents","setSignedMode","setAnonymousMode","resetUUID","addRecord","fetchGlobalID","set","trackEvent","trackPageview","trackClicks","ready"],n=0;n<s.length;n++){var c=s[n];e[t].prototype[c]=r(c)}var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.treasuredata.com/sdk/3.0.0/td.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)}}("Treasure",this);
+  </script>
+  <title>PPHG</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <h1>Test</h1>
+  <form>
+    <!--
+    <div class="form-group">
+      <label for="lookup_key_input">&nbsp;&nbsp;Item</label>
+      <input type="text" class="form-control" id="lookup_key_input" value="0ce95ed0-dbdc-45cb-89d2-04c70ae00b05">
+    </div>
+    <div class="form-group">
+      <label for="token_input">&nbsp;&nbsp;PAPI Token</label>
+      <input type="text" class="form-control" id="token_input" value="d04af64b-a1df-4416-ad57-2d6f35af2e1a" readonly>
+    </div>
+    -->
+    <button type="button" class="btn btn-primary" id="fetch_segment_button">Fetch Info</button>
+  </form>
+<div class="highlight" id="resultArea"></div>
+  <script>
+    // main JS, place in body
+
+    // initialize a data layer to store the segmentId in
+    window.papiDataLayer = window.papiDataLayer || [];
+    
+    // connect to TD
+    var fetchSegment = function(lookupKey, token) {
+      var td = new Treasure({
+        // the below values do not matter for the current use case, but are mandatory regardless
+        writeKey: 'xxx', // TD write-only API key
+        database: 'demo', // some database
+        cdpHost: 'cdp-eu01.in.treasuredata.com' // EU endpoint
+      });
+      
+    // catch and process PAPI result from TD
+    var successCallback = function(callbackResults){
+    var papiData = JSON.parse(JSON.stringify(callbackResults[0])) // PAPI response (JSON)
+    var segmentId = papiData["values"]; // segment ID from PAPI response
+    var audienceId = papiData["audienceId"]; // audience ID from PAPI response
+    
+    // reverse lookup segment ID to obtain segment name
+    segmentId.forEach(function(segment){
+      if(segment){
+        var audienceApiUrl = 'https://api-cdp.eu01.treasuredata.com/audiences/' + audienceId + '/segments/' + segment; // TD Audience API URL (Europe Endpoint)
+        var audienceRequestOptions = {
+          method: 'GET',
+          headers: {
+            'Authorization': 'TD1 xxx/yyyyy', // PPHG TD master API key
+          },
+        };
+        // send request to TD Audience API
+        fetch(audienceApiUrl, audienceRequestOptions)
+          .then(function(response){
+            if(!response.ok){
+              console.log("Some error occurred.");
+            }
+            return response.json();
+          })
+          .then(function(data){
+            var audienceData = JSON.parse(JSON.stringify(data, null, 2)); // TD Audience API response
+            // add segment name to data layer
+            var dataToPush = {
+              "segment name" : audienceData["name"], // segment name
+              "segment id" : segment // segment id
+            }
+            papiDataLayer.push(dataToPush);
+          });
+        } else {
+          console.log("Segment not found.");
+          segmentId = "null";
+        };
+      });
+    }
+
+    // PAPI error handling - output to browser console
+    var errorCallback = function(error) {
+      console.log(error);
+    }
+      
+    // fetch data from PAPI
+    td.fetchUserSegments({
+      audienceToken: [token], // PAPI token
+      keys: {td_client_id: lookupKey} // td_client_id
+    }, successCallback, errorCallback);}
+    
+    // get values (lookup key, PAPI token) from HTML form (for demo purposes)
+    document.getElementById('fetch_segment_button').onclick = function() {
+    //document.addEventListener("DOMContentLoaded", function(event) {
+      // get td_client_id 1st party cookie
+      function get_cookie(cookie_name){
+      var result = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+      if(result)
+        return unescape(result[2]);
+      else
+        console.log("Cookie not found.");
+      }
+      var lookupKey = get_cookie("_td"); // td_client_id 1st party cookie
+      var token = "zzz"; // PAPI token
+      fetchSegment(lookupKey, token);
+    };
+    //});
+  </script>
+</body>
+</html>
