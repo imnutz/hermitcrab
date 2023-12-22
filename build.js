@@ -5,8 +5,6 @@ var dotenv = require('dotenv');
 
 dotenv.config()
 
-console.log(process.env);
-
 var fakeInfo = "xxxxxxxxxx";
 
 function replaceTdInfo (path, database, host, apiKey, segmentToken, profileToken) {
@@ -27,6 +25,14 @@ function replaceTdInfo (path, database, host, apiKey, segmentToken, profileToken
 
     fs.writeFileSync(fileName, replacedData, 'utf-8')
   })
+}
+
+function fastApiKey() {
+  var data = fs.readFileSync('./test_audiences.html', 'utf-8')
+  var replacedData = data
+    .replace('TD_MASTER_API_KEY', process.env.td_prod_api_key)
+
+  fs.writeFileSync('./test_audiences.html', replacedData, 'utf-8')
 }
 
 let {
@@ -65,3 +71,5 @@ replaceTdInfo(
   apiKeyAp03,
   segmentTokenAp03
 );
+
+fastApiKey()
