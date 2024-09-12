@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CAPI Cookies</title>
+        <script
+            src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"
+            type="text/javascript"
+        ></script>
+        <script type="text/javascript">
+            !(function (t, e) {
+                if (void 0 === e[t]) {
+                    (e[t] = function () {
+                        e[t].clients.push(this),
+                            (this._init = [
+                                Array.prototype.slice.call(arguments),
+                            ]);
+                    }),
+                        (e[t].clients = []);
+                    for (
+                        var r = [
+                                "addRecord",
+                                "blockEvents",
+                                "fetchServerCookie",
+                                "fetchGlobalID",
+                                "fetchUserSegments",
+                                "resetUUID",
+                                "ready",
+                                "setSignedMode",
+                                "setAnonymousMode",
+                                "set",
+                                "trackEvent",
+                                "trackPageview",
+                                "trackClicks",
+                                "unblockEvents",
+                            ],
+                            s = 0;
+                        s < r.length;
+                        s++
+                    ) {
+                        var c = r[s];
+                        e[t].prototype[c] = (function (t) {
+                            return function () {
+                                return (
+                                    (this["_" + t] = this["_" + t] || []),
+                                    this["_" + t].push(
+                                        Array.prototype.slice.call(arguments),
+                                    ),
+                                    this
+                                );
+                            };
+                        })(c);
+                    }
+                    var n = document.createElement("script"),
+                        o =
+                            ((n.type = "text/javascript"),
+                            (n.async = !0),
+                            (n.src =
+                                ("https:" === document.location.protocol
+                                    ? "https:"
+                                    : "http:") +
+                                "//imnutzs3.s3.amazonaws.com/td.js"),
+                            document.getElementsByTagName("script")[0]);
+                    o.parentNode.insertBefore(n, o);
+                }
+            })("Treasure", this);
+        </script>
+        <script src="./index.js" defer></script>
+        <script>
+            var td = new Treasure({
+                database: "_sondo",
+                writeKey: "1/xxx",
+                host: "us01-development.records.in.treasuredata.com",
+                cdpHost: "cdp-development.in.treasuredata.com",
+                startInSignedMode: true,
+            });
+        </script>
+        <style>
+            button {
+                padding: 5px 10px;
+                border-radius: 3px;
+                font-size: 1rem;
+            }
+            .part {
+                padding: 5px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Setup</h1>
+        <h3>Params</h3>
+        <div class="buttons">
+            <button id="para_gclid">Add Google Click ID</button>
+            <button id="para_fbclid">Add Facebook Click ID</button>
+            <button id="para_yclid">Add Yahoo Click ID yclid</button>
+            <button id="para_yjryjad">Add Yahoo Click ID yjr_yjad</button>
+        </div>
+
+        <h3>Cookies</h3>
+        <div class="buttons">
+            <div class="part">
+                <button id="c_ga">Set _ga</button>
+                <button id="c_gclaw">Set _gcl_aw</button>
+            </div>
+            <div class="part">
+                <button id="c_fbp">Set _fbp</button>
+                <button id="c_fbc">Set _fbc</button>
+            </div>
+            <div class="part">
+                <button id="c_yjsuyjad">Set Yahoo CAPI _yjsu_yjad</button>
+                <button id="c_yclyjad">Set Yahoo _ycl_yjad</button>
+                <button id="c_yjryjad">Set Yahoo _yjr_yjad</button>
+            </div>
+            <div class="part">
+                <button id="c_twclid">Set _twclid</button>
+                <button id="c_ltcid">Set __lt__cid</button>
+            </div>
+        </div>
+
+        <h1>Fetching</h1>
+        <h3>Cookies</h3>
+        <div class="buttons">
+            <div class="part">
+                <button id="get_ga">Get _ga cookie</button>
+                <button id="get_gclaw">Get _gcl_aw cookie</button>
+            </div>
+            <div class="part">
+                <button id="get_fbp">Get _fbp cookie</button>
+                <button id="get_fbc">Get _fbc cookie</button>
+            </div>
+            <div class="part">
+                <button id="get_ycapi">Get Yahoo CAPI cookie</button>
+                <button id="get_yclyjad">Get Yahoo _ycl_yjad cookie</button>
+                <button id="get_yjryjad">Get Yahoo _yjryjad cookie</button>
+            </div>
+            <div class="part">
+                <button id="get_twclid">Get X _twclid cookie</button>
+                <button id="get_ltcid">Get Line _ltcid cookie</button>
+            </div>
+        </div>
+        <h3>Params</h3>
+        <div class="buttons">
+            <div class="part">
+                <button id="get_p_gclid">Get Google Click ID Param</button>
+                <button id="get_p_fbclid">Get Facebook Click ID Param</button>
+                <button id="get_p_yclid">Get Yahoo Click ID yclid Param</button>
+                <button id="get_p_yjryjad">
+                    Get Yahoo Click ID yjr_yjad Param
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
