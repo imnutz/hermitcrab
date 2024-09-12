@@ -61,6 +61,15 @@ replaceTdInfo(
   profileToken
 );
 
+replaceTdInfo(
+  './capi/*.html',
+  database,
+  c360Host,
+  apiKey,
+  segmentToken,
+  profileToken
+);
+
 
 let { databaseAp03, tdHostAp03, apiKeyAp03, segmentTokenAp03 } = process.env;
 
