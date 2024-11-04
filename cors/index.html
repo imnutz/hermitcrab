@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>c360-ingest-api Testing</title>
+<script type="text/javascript">
+!function(t,e){if(void 0===e[t]){e[t]=function(){e[t].clients.push(this),this._init=[Array.prototype.slice.call(arguments)]},e[t].clients=[];for(var r=function(t){return function(){return this["_"+t]=this["_"+t]||[],this["_"+t].push(Array.prototype.slice.call(arguments)),this}},s=["addRecord","blockEvents","fetchServerCookie","fetchGlobalID","fetchUserSegments","resetUUID","ready","setSignedMode","setAnonymousMode","set","trackEvent","trackPageview","trackClicks","unblockEvents"],c=0;c<s.length;c++){var n=s[c];e[t].prototype[n]=r(n)}var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=("https:"===document.location.protocol?"https:":"http:")+"//cdn.treasuredata.com/sdk/4.0/td.min.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(o,i)}}("Treasure",this);
+</script>
+  <script>
+    var td = new Treasure({
+      database: 'xxxxxxxxxx',
+      writeKey: 'xxxxxxxxxx',
+      host: 'xxxxxxxxxx',
+      cdpHost: 'cdp-development.in.treasuredata.com',
+      startInSignedMode: true
+    })
+
+    //td.set('$global', 'td_global_id', 'td_global_id')
+    td.fetchUserSegments({
+      audienceToken: ['xxxxxxxxxx'],
+      keys: {
+        city: 'Denver'
+      }
+    }, function (response) {
+      console.log(JSON.stringify(response, null, 2))
+    }, function () {
+      console.log('user segment: nay')
+    }) 
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

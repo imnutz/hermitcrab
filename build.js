@@ -60,6 +60,14 @@ replaceTdInfo(
   segmentToken,
   profileToken
 );
+replaceTdInfo(
+  './cors/*.html',
+  database,
+  c360Host,
+  apiKey,
+  segmentToken,
+  profileToken
+);
 
 replaceTdInfo(
   './capi/*.html',
