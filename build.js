@@ -47,7 +47,7 @@ let {
 replaceTdInfo(
   './*.html',
   database,
-  tdHost,
+  c360Host,
   apiKey,
   segmentToken
 );

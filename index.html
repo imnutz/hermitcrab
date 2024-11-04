@@ -66,13 +66,13 @@
     td.fetchUserSegments({
       audienceToken: ['xxxxxxxxxx'],
       keys: {
-        email: 'someone@somewhere.com'
+        city: 'Denver'
       }
     }, function (response) {
-      console.log('user segment: yay')
+      console.log(JSON.stringify(response, null, 2))
     }, function () {
       console.log('user segment: nay')
-    })
+    }) 
   </script>
 </head>
 <body>
