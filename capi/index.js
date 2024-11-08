@@ -1,6 +1,7 @@
 !(function () {
   // Utils ===============================================
   var cookieOptions = { secure: true };
+  var configKey = "last-config";
   function addUrlParam(name, value) {
     var currentUrl = new URL(window.location.href);
 
@@ -136,7 +137,9 @@
   }
   // END SET COOKIES ============================================
 
-  function fetchTags() {
+  function fetchTags(e) {
+    e.preventDefault();
+
     var iVendors = getElement("i_vendors").value || "";
     var iCookies = getElement("i_cookies").value || "";
     var iParams = getElement("i_params").value || "";
@@ -144,27 +147,46 @@
 
     var configs = {};
     var options = {};
+    var lastConfigs = {};
     if (iVendors) {
       configs.vendors = iVendors.split(",");
+      lastConfigs.vendors = iVendors;
     }
 
     if (iCookies) {
       configs.cookies = iCookies.split(",");
+      lastConfigs.cookies = iCookies;
     }
 
     if (iParams) {
       configs.params = iParams.split(",");
+      lastConfigs.params = iParams;
     }
 
     if (iPrefix) {
       options.gclPrefix = iPrefix;
+      lastConfigs.gclPrefix = iPrefix;
     }
 
     td.collectTags(configs, options);
 
+    localStorage.setItem(configKey, JSON.stringify(lastConfigs));
+
     getElement("result").textContent = "";
     var globalTable = td.get("$global");
     getElement("result").textContent = JSON.stringify(globalTable, null, 2);
+  }
+
+  function restoreLastConfigs() {
+    var lastConfigs = localStorage.getItem(configKey);
+    if (!lastConfigs) return;
+
+    var lastConfigJson = JSON.parse(lastConfigs);
+
+    getElement("i_vendors").value = lastConfigJson.vendors || "";
+    getElement("i_cookies").value = lastConfigJson.cookies || "";
+    getElement("i_params").value = lastConfigJson.params || "";
+    getElement("i_prefix").value = lastConfigJson.gclPrefix || "";
   }
 
   function setup() {
@@ -208,4 +230,5 @@
   }
 
   setup();
+  restoreLastConfigs();
 })();
