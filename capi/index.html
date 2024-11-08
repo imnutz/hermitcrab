@@ -25,7 +25,20 @@
                     }),
                         (e[t].clients = []);
                     for (
-                        var r = [
+                        var r = function (t) {
+                                return function () {
+                                    return (
+                                        (this["_" + t] = this["_" + t] || []),
+                                        this["_" + t].push(
+                                            Array.prototype.slice.call(
+                                                arguments,
+                                            ),
+                                        ),
+                                        this
+                                    );
+                                };
+                            },
+                            s = [
                                 "addRecord",
                                 "blockEvents",
                                 "fetchServerCookie",
@@ -40,35 +53,25 @@
                                 "trackPageview",
                                 "trackClicks",
                                 "unblockEvents",
+                                "collectTags",
                             ],
-                            s = 0;
-                        s < r.length;
-                        s++
+                            c = 0;
+                        c < s.length;
+                        c++
                     ) {
-                        var c = r[s];
-                        e[t].prototype[c] = (function (t) {
-                            return function () {
-                                return (
-                                    (this["_" + t] = this["_" + t] || []),
-                                    this["_" + t].push(
-                                        Array.prototype.slice.call(arguments),
-                                    ),
-                                    this
-                                );
-                            };
-                        })(c);
+                        var o = s[c];
+                        e[t].prototype[o] = r(o);
                     }
-                    var n = document.createElement("script"),
-                        o =
-                            ((n.type = "text/javascript"),
-                            (n.async = !0),
-                            (n.src =
-                                ("https:" === document.location.protocol
-                                    ? "https:"
-                                    : "http:") +
-                                "//imnutzs3.s3.amazonaws.com/td.js"),
-                            document.getElementsByTagName("script")[0]);
-                    o.parentNode.insertBefore(n, o);
+                    var n = document.createElement("script");
+                    (n.type = "text/javascript"),
+                        (n.async = !0),
+                        (n.src =
+                            ("https:" === document.location.protocol
+                                ? "https:"
+                                : "http:") +
+                            "//imnutzs3.s3.us-east-1.amazonaws.com/td.js");
+                    var i = document.getElementsByTagName("script")[0];
+                    i.parentNode.insertBefore(n, i);
                 }
             })("Treasure", this);
         </script>
