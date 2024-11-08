@@ -68,6 +68,7 @@
     }
 
     Cookies.set(`${prefix}_${name}`, `${prefix}_${name}`, cookieOptions);
+    return false;
   }
 
   function set_fbp_Cookie() {
@@ -139,8 +140,10 @@
     var iVendors = getElement("i_vendors").value || "";
     var iCookies = getElement("i_cookies").value || "";
     var iParams = getElement("i_params").value || "";
+    var iPrefix = getElement("i_prefix").value || "";
 
     var configs = {};
+    var options = {};
     if (iVendors) {
       configs.vendors = iVendors.split(",");
     }
@@ -153,7 +156,11 @@
       configs.params = iParams.split(",");
     }
 
-    td.collectTags(configs);
+    if (iPrefix) {
+      options.gclPrefix = iPrefix;
+    }
+
+    td.collectTags(configs, options);
 
     var globalTable = td.get("$global");
     getElement("result").textContent = JSON.stringify(globalTable, null, 2);
@@ -162,7 +169,7 @@
   function setup() {
     // add para actions
     addClickEvent(getElement("para_gclid"), addGoogle_gclid_Param);
-    addClickEvent(getElement("para_wbraid"), addGoogle_gclid_Param);
+    addClickEvent(getElement("para_wbraid"), addGoogle_wbraid_Param);
     addClickEvent(getElement("para_fbclid"), addFacebook_fbclid_Param);
     addClickEvent(getElement("para_yclid"), addYahoo_yclid_Param);
     addClickEvent(getElement("para_ldtagcl"), addLine_ldtagcl_Param);
