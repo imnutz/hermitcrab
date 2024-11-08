@@ -135,6 +135,30 @@
   }
   // END SET COOKIES ============================================
 
+  function fetchTags() {
+    var iVendors = getElement("i_vendors").value || "";
+    var iCookies = getElement("i_cookies").value || "";
+    var iParams = getElement("i_params").value || "";
+
+    var configs = {};
+    if (iVendors) {
+      configs.vendors = iVendors.split(",");
+    }
+
+    if (iCookies) {
+      configs.cookies = iCookies.split(",");
+    }
+
+    if (iParams) {
+      configs.params = iParams.split(",");
+    }
+
+    td.collectTags(configs);
+
+    var globalTable = td.get("$global");
+    getElement("result").text = JSON.stringify(globalTable, null, 2);
+  }
+
   function setup() {
     // add para actions
     addClickEvent(getElement("para_gclid"), addGoogle_gclid_Param);
@@ -171,6 +195,8 @@
     addClickEvent(getElement("c_ttp"), set_ttp_Cookie);
     addClickEvent(getElement("c_mktotrk"), set_mktotrk_Cookie);
     addClickEvent(getElement("c_utagmain"), set_utagmain_Cookie);
+
+    addClickEvent(getElement("fetch_tags"), handler);
   }
 
   setup();

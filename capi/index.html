@@ -247,39 +247,46 @@
                     <fieldset>
                         <div class="pure-g">
                             <div class="pure-u-1 pure-control-group">
-                                <label for="vendors">Vendors:</label>
+                                <label for="i_vendors">Vendors:</label>
                                 <input
                                     type="text"
-                                    id="vendors"
+                                    id="i_vendors"
                                     class="pure-input-3-4"
                                 />
                             </div>
 
                             <div class="pure-u-1 pure-control-group">
-                                <label for="cookies">Cookies:</label>
+                                <label for="i_cookies">Cookies:</label>
                                 <input
                                     type="text"
-                                    id="cookies"
+                                    id="i_cookies"
                                     class="pure-input-3-4"
                                 />
                             </div>
 
                             <div class="pure-u-1 pure-control-group">
-                                <label for="params">Params:</label>
+                                <label for="i_params">Params:</label>
                                 <input
                                     type="text"
-                                    id="params"
+                                    id="i_params"
                                     class="pure-input-3-4"
                                 />
                             </div>
                             <div class="pure-controls">
-                                <button class="pure-button pure-button-primary">
+                                <button
+                                    class="pure-button pure-button-primary"
+                                    id="fetch_tags"
+                                >
                                     Fetch tags
                                 </button>
                             </div>
                         </div>
                     </fieldset>
                 </form>
+                <div class="pure-g">
+                    <h4>Result:</h4>
+                    <pre id="result"></pre>
+                </div>
             </div>
         </div>
     </body>
