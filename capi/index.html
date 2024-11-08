@@ -89,6 +89,9 @@
             body {
                 padding: 1rem;
             }
+            h2 {
+                margin-top: 0;
+            }
             button {
                 padding: 3px;
                 border-radius: 3px;
@@ -102,11 +105,29 @@
                 padding: 8px;
                 border-radius: 3px;
             }
+            .notice {
+                border: 1px dashed;
+                border-color: crimson;
+                padding: 3px;
+                margin-bottom: 1rem;
+            }
+            .notice p {
+                margin: 0;
+                padding: 0;
+            }
         </style>
     </head>
     <body>
         <div class="pure-g">
             <div class="pure-u-12-24">
+                <h2>[Testing] Ads Cookies for Conversion API</h2>
+                <div class="notice pure-u-13-24">
+                    <p>
+                        - Delete the cookies: go to the Developer Tools to
+                        remove them
+                    </p>
+                    <p>- Delete the params: remove them from the address bar</p>
+                </div>
                 <h3>Set Params</h3>
                 <div class="buttons">
                     <div class="part">
@@ -248,6 +269,11 @@
                 </div>
             </div>
             <div class="pure-u-12-24">
+                <div class="notice pure-u-1">
+                    Once the properties are added to <b>$global</b> table, we
+                    cannot delete them. In case, you see an unexpected querying
+                    result, please refresh the page.
+                </div>
                 <form class="pure-form pure-form-aligned">
                     <fieldset>
                         <div class="pure-g">
