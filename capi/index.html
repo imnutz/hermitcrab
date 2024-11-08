@@ -80,10 +80,11 @@
             var td = new Treasure({
                 database: "_sondo",
                 writeKey: "xxxxxxxxxx",
-                host: "us01-development.records.in.treasuredata.com",
-                cdpHost: "cdp-development.in.treasuredata.com",
+                host: "us01.records.in.treasuredata.com",
+                cdpHost: "cdp.in.treasuredata.com",
                 startInSignedMode: true,
             });
+            td.trackPageview("cpi_pageviews");
         </script>
         <style>
             body {
