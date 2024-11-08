@@ -162,6 +162,7 @@
 
     td.collectTags(configs, options);
 
+    getElement("result").textContent = "";
     var globalTable = td.get("$global");
     getElement("result").textContent = JSON.stringify(globalTable, null, 2);
   }
