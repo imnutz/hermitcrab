@@ -196,7 +196,7 @@
     addClickEvent(getElement("c_mktotrk"), set_mktotrk_Cookie);
     addClickEvent(getElement("c_utagmain"), set_utagmain_Cookie);
 
-    addClickEvent(getElement("fetch_tags"), handler);
+    addClickEvent(getElement("fetch_tags"), fetchTags);
   }
 
   setup();
