@@ -59,7 +59,8 @@
     Cookies.set("_ga", "ga_value", cookieOptions);
   }
 
-  function set_gcl_Cookie() {
+  function set_gcl_Cookie(e) {
+    e.preventDefault();
     var prefix = getElement("gcl-prefix").value || "_gcl";
     var name = getElement("gcl-name").value;
 
@@ -68,7 +69,6 @@
     }
 
     Cookies.set(`${prefix}_${name}`, `${prefix}_${name}`, cookieOptions);
-    return false;
   }
 
   function set_fbp_Cookie() {
