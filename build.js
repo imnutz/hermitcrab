@@ -38,7 +38,6 @@ function replaceTdInfo(
 
 function replaceRTPersonalizationInfo(
   path,
-  database,
   host,
   apiKey,
   rtEndpoint,
@@ -52,7 +51,6 @@ function replaceRTPersonalizationInfo(
   files.forEach((fileName) => {
     var data = fs.readFileSync(fileName, "utf-8");
     var replacedData = data
-      .replace(/database:.*('|")/g, `database: '${database}'`)
       .replace(/host:.*('|")/g, `host: '${host}'`)
       .replace(/writeKey:.*('|")/g, `writeKey: '${apiKey}'`)
       .replace(/endpoint:.*('|")/g, `endpoint: '${rtEndpoint}'`)
@@ -125,7 +123,6 @@ replaceTdInfo(
 let { awsDevApiKey, awsDevWp13nToken, awsDevP13nEndpoint } = process.env;
 replaceRTPersonalizationInfo(
   "./rt_personalization.html",
-  database,
   tdHostAp03,
   awsDevApiKey,
   awsDevP13nEndpoint,
