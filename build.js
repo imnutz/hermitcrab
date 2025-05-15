@@ -55,7 +55,7 @@ function replaceRTPersonalizationInfo(
       .replace(/database:.*('|")/g, `database: '${database}'`)
       .replace(/host:.*('|")/g, `host: '${host}'`)
       .replace(/writeKey:.*('|")/g, `writeKey: '${apiKey}'`)
-      .replace(/endpoint:.*('|")/g, `endpoint: ${rtEndpoint}`)
+      .replace(/endpoint:.*('|")/g, `endpoint: '${rtEndpoint}'`)
       .replace(/token:.*('|")/g, `token: '${wp13nToken}'`);
 
     fs.writeFileSync(fileName, replacedData, "utf-8");
