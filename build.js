@@ -128,7 +128,6 @@ replaceRTPersonalizationInfo(
   database,
   tdHostAp03,
   awsDevApiKey,
-  segmentTokenAp03,
   awsDevP13nEndpoint,
   awsDevWp13nToken
 );
