@@ -15,7 +15,7 @@
     var token = tokenInput.value;
     var db = dbInput.value;
     var table = tbInput.value;
-    var payloadText = payloadInput.value || {};
+    var payloadText = payloadInput.value || "{}";
     var payloadJson = JSON.parse(payloadText);
 
     td.fetchPersonalization(
