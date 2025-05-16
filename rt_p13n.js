@@ -16,7 +16,13 @@
     var db = dbInput.value;
     var table = tbInput.value;
     var payloadText = payloadInput.value || "{}";
-    var payloadJson = JSON.parse(payloadText);
+    var payloadJson = {}
+
+    try {
+      payloadJson = JSON.parse(payloadText);
+    } catch {
+      payloadJson = {};
+    }
 
     td.fetchPersonalization(
       {
