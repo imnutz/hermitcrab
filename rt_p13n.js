@@ -4,6 +4,7 @@
   var tbInput = document.querySelector('#tb');
   var payloadInput = document.querySelector('#payload');
   var requestBtn = document.querySelector('#request');
+  var display = document.querySelector('#display');
 
   requestBtn.addEventListener('click', function(evt) {
     evt.preventDefault();
@@ -33,7 +34,7 @@
       }, 
       payloadJson, 
       function(data) {
-        console.log(data);
+        display.textContent = JSON.stringify(data, null, 2);
       }, 
       function(e) {
         console.error(e);
