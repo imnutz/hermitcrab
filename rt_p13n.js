@@ -2,7 +2,7 @@
   var tokenInput = document.querySelector('#token')
   var dbInput = document.querySelector('#db');
   var tbInput = document.querySelector('#tb');
-  var payloadText = document.querySelector('#payload');
+  var payloadInput = document.querySelector('#payload');
   var requestBtn = document.querySelector('#request');
 
   requestBtn.addEventListener('click', function(evt) {
@@ -15,7 +15,8 @@
     var token = tokenInput.value;
     var db = dbInput.value;
     var table = tbInput.value;
-    var payload = payloadText.value || {};
+    var payloadText = payloadInput.value || {};
+    var payloadJson = JSON.parse(payloadText);
 
     td.fetchPersonalization(
       {
@@ -24,7 +25,7 @@
         table: table,
         token: token
       }, 
-      payload, 
+      payloadJson, 
       function(data) {
         console.log(data);
       }, 
