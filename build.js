@@ -73,7 +73,8 @@ function fastApiKey() {
 let { database, tdHost, apiKey, segmentToken, c360Host, profileToken } =
   process.env;
 
-//replaceTdInfo("./*.html", database, c360Host, apiKey, segmentToken);
+replaceTdInfo("./index.html", database, c360Host, apiKey, segmentToken);
+replaceTdInfo("./index2.html", database, c360Host, apiKey, segmentToken);
 
 replaceTdInfo(
   "./c360/*.html",
