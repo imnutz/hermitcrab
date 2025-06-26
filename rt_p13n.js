@@ -1,6 +1,5 @@
 !function() {
   var hostInput = document.querySelector('#host');
-  var apiKeyInput = document.querySelector('#apikey');
   var tokenInput = document.querySelector('#token');
   var dbInput = document.querySelector('#db');
   var tbInput = document.querySelector('#tb');
@@ -30,6 +29,7 @@
       payloadJson = {};
     }
 
+    var apiKeyInput = document.querySelector('#apikey');
     if (apiKeyInput.value) {
       td.client.writeKey = apiKeyInput.value
     }
