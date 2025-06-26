@@ -83,8 +83,10 @@
   subscribeBtn.addEventListener('click', function(evt) {
     evt.preventDefault();
     sendRequest(JSON.stringify({
-      "td_path": "auto_3",
-      "email": "ak_20250603_1@gmail.com"
+      "td_path": "auto_4",
+      "td_language": "English",
+      "number_of_clicks": 5,
+      "email": "auto_4@gmail.com"
     }));
   });
 }()
