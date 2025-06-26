@@ -1,9 +1,4 @@
 !function() {
-  var hostInput = document.querySelector('#host');
-  var tokenInput = document.querySelector('#token');
-  var dbInput = document.querySelector('#db');
-  var tbInput = document.querySelector('#tb');
-  var payloadInput = document.querySelector('#payload');
   var requestBtn = document.querySelector('#request');
   var addToCartBtn = document.querySelector('#add_to_cart');
   var buyNowBtn = document.querySelector('#bn_btn');
@@ -12,6 +7,12 @@
   var display = document.querySelector('#display');
 
   var sendRequest = function(payload) {
+    var hostInput = document.querySelector('#host');
+    var tokenInput = document.querySelector('#token');
+    var dbInput = document.querySelector('#db');
+    var tbInput = document.querySelector('#tb');
+    var payloadInput = document.querySelector('#payload');
+
     if (!tokenInput.value) return alert('Need token');
     if (!dbInput.value) return alert('Need database');
     if (!tbInput.value) return alert('Need table');
