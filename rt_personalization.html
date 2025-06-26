@@ -27,9 +27,11 @@
       host: 'xxxxxxxxxx'
     });
 
-    if (apiKey) {
-      td.client.writeKey = apiKey;
-    }
+    td.ready(function() {
+      if (apiKey) {
+        td.client.writeKey = apiKey;
+      }
+    })
   </script>
   <script src="rt_p13n.js" type="text/javascript" defer></script>
 </head>
