@@ -8,13 +8,29 @@
       display: flex;
       align-items: center;
       padding: 5px;
+      gap: 5px;
     }
-    .field.buttons button {
-      margin-right: 5px;
+
+    input[type=text] {
+      padding: 3px 8px;
     }
+
+    input[type=text]#token {
+      width: 250px;
+    }
+
+    .field label:first-child {
+      display: block;
+      width: 150px;
+    }
+
     .field.buttons .first {
       margin-right: 30px;
+      background-color: blue;
+      color: white;
+      width: 80px;
     }
+
     textarea#payload {
       height: 100px;
       width: 300px;
@@ -44,32 +60,27 @@
 <body>
   <h1>RT P13N</h1> 
   <div class="field">
-    <label for="host">Host:
-      <select name="host" id="host">
-        <option value="us01.p13n.in.treasuredata.com">us01.p13n.in.treasuredata.com</option>
-        <option value="eu01.p13n.in.treasuredata.com">eu01.p13n.in.treasuredata.com</option>
-      </select>
-    </label>
+    <label for="host">Host: </label>
+    <select name="host" id="host">
+      <option value="us01.p13n.in.treasuredata.com">us01.p13n.in.treasuredata.com</option>
+      <option value="eu01.p13n.in.treasuredata.com">eu01.p13n.in.treasuredata.com</option>
+    </select>
   </div>
 
   <div class="field">
-    <label for="token">P13n token:
-      <input type="text" name="token" id="token">
-    </label>
+    <label for="token">P13n token: </label>
+    <input type="text" name="token" id="token">
   </div>
 
   <div class="field">
-    <label for="db">Database:
-      <input type="text" name="db" id="db" value="rt_retail_golden">
-    </label>
-    <label for="tb">Table:
-      <input type="text" name="tb" id="tb" value="pageviews">
-    </label>
+    <label for="db">Database: </label>
+    <input type="text" name="db" id="db" value="rt_retail_golden">
+    <label for="tb">Table: </label>
+    <input type="text" name="tb" id="tb" value="pageviews">
   </div>
   <div class="field">
-    <label for="payload">Payload(JSON):
-      <textarea name="payload" id="payload"></textarea>
-    </label>
+    <label for="payload">Payload(JSON): </label>
+    <textarea name="payload" id="payload"></textarea>
   </div>
   <div class="field buttons">
     <button id="request" class="first">Request</button>
