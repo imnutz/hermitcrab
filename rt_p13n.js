@@ -1,6 +1,7 @@
 !function() {
-  var hostInput = document.querySelector('#host')
-  var tokenInput = document.querySelector('#token')
+  var hostInput = document.querySelector('#host');
+  var apiKeyInput = document.querySelector('#apikey');
+  var tokenInput = document.querySelector('#token');
   var dbInput = document.querySelector('#db');
   var tbInput = document.querySelector('#tb');
   var payloadInput = document.querySelector('#payload');
@@ -27,6 +28,10 @@
       payloadJson = JSON.parse(payloadText);
     } catch {
       payloadJson = {};
+    }
+
+    if (apiKeyInput.value) {
+      td.client.writeKey = apiKeyInput.value
     }
 
     td.fetchPersonalization(
