@@ -6,7 +6,7 @@
   var payloadInput = document.querySelector('#payload');
   var requestBtn = document.querySelector('#request');
   var addToCartBtn = document.querySelector('#add_to_cart');
-  var buyNowBtn = document.querySelector('#buy_now');
+  var buyNowBtn = document.querySelector('#buynow');
   var addToWishlist = document.querySelector('#add_to_wishlist');
   var subscribeBtn = document.querySelector('#subscribe');
   var display = document.querySelector('#display');
