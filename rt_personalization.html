@@ -9,6 +9,12 @@
       align-items: center;
       padding: 5px;
     }
+    .field.buttons button {
+      margin-right: 5px;
+    }
+    .field.buttons .first {
+      margin-right: 30px;
+    }
     textarea#payload {
       height: 100px;
       width: 300px;
@@ -65,8 +71,12 @@
       <textarea name="payload" id="payload"></textarea>
     </label>
   </div>
-  <div class="field">
-    <button id="request">Request</button>
+  <div class="field buttons">
+    <button id="request" class="first">Request</button>
+    <button id="add_to_cart">Add to cart</button>
+    <button id="by_now">Buy now</button>
+    <button id="add_to_wishlist">Add to wishlist</button>
+    <button id="subscribe">Subscribe</button>
   </div>
   <hr/>
   <pre id="display"></pre>
