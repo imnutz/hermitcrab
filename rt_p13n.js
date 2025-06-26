@@ -1,4 +1,5 @@
 !function() {
+  var hostInput = document.querySelector('#host')
   var tokenInput = document.querySelector('#token')
   var dbInput = document.querySelector('#db');
   var tbInput = document.querySelector('#tb');
@@ -13,6 +14,7 @@
     if (!dbInput.value) return alert('Need database');
     if (!tbInput.value) return alert('Need table');
 
+    var host = hostInput.value;
     var token = tokenInput.value;
     var db = dbInput.value;
     var table = tbInput.value;
@@ -27,7 +29,7 @@
 
     td.fetchPersonalization(
       {
-        endpoint: 'p13n-api-development.treasuredata.com',
+        endpoint: host || 'p13n-api-development.treasuredata.com',
         database: db,
         table: table,
         token: token
