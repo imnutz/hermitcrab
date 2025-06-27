@@ -21,14 +21,17 @@
     var token = tokenInput.value;
     var db = dbInput.value;
     var table = tbInput.value;
-    var payloadText = payload || payloadInput.value || "{}";
+    var payloadText = payloadInput.value;
+    var parsedPayload = null;
     var payloadJson = {}
 
     try {
-      payloadJson = JSON.parse(payloadText);
+      parsedPayload = JSON.parse(payloadText);
     } catch {
-      payloadJson = {};
+      parsedPayload = null;
     }
+
+    payloadJson = payload || parsedPayload || "{}"
 
     var apiKeyInput = document.querySelector('#apikey');
     if (apiKeyInput.value) {
@@ -59,34 +62,34 @@
   });
   addToCartBtn.addEventListener('click', function(evt) {
     evt.preventDefault();
-    sendRequest(JSON.stringify({
+    sendRequest({
       "td_path": "auto_1",
       "td_browser": "Chrome",
       "email": "auto_1@gmail.com" 
-    }));
+    });
   });
   buyNowBtn.addEventListener('click', function(evt) {
     evt.preventDefault();
-    sendRequest(JSON.stringify({
+    sendRequest({
       "td_path": "auto_2",
       "td_language": "English",
       "email": "auto_2@gmail.com"
-    }));
+    });
   });
   addToWishlist.addEventListener('click', function(evt) {
     evt.preventDefault();
-    sendRequest(JSON.stringify({
+    sendRequest({
       "td_path": "auto_3",
       "email": "ak_20250603_1@gmail.com"
-    }));
+    });
   });
   subscribeBtn.addEventListener('click', function(evt) {
     evt.preventDefault();
-    sendRequest(JSON.stringify({
+    sendRequest({
       "td_path": "auto_4",
       "td_language": "English",
       "number_of_clicks": 5,
       "email": "auto_4@gmail.com"
-    }));
+    });
   });
 }()
