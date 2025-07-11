@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RT Personalization 2.0</title>
+  <style>
+    .field {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      gap: 5px;
+    }
+
+    input[type=text] {
+      padding: 3px 8px;
+    }
+
+    input[type=text]#token,
+    input[type=text]#apikey {
+      width: 250px;
+    }
+
+    .field label:first-child {
+      display: block;
+      width: 150px;
+    }
+
+    .field.buttons .first {
+      margin-right: 30px;
+      background-color: blue;
+      color: white;
+      width: 80px;
+    }
+
+    textarea#payload {
+      height: 100px;
+      width: 300px;
+    }
+  </style>
+  <script src="./script.js" defer>
+  </script>
+</head>
+<body>
+  <h1>UTM Parameters</h1> 
+  <div class="field">
+    <label for="utm_id">utm_id: </label>
+    <input type="text" name="utm_id" id="utm_id">
+  </div>
+  <div class="field">
+    <label for="utm_medium">utm_medium: </label>
+    <input type="text" name="utm_medium" id="utm_medium">
+  </div>
+  <div class="field">
+    <label for="utm_source_platform">utm_source_platform: </label>
+    <input type="text" name="utm_source_platform" id="utm_source_platform">
+  </div>
+  <div class="field">
+    <label for="utm_source">utm_source: </label>
+    <input type="text" name="utm_source" id="utm_source">
+  </div>
+  <div class="field">
+    <label for="utm_campaign">utm_campaign: </label>
+    <input type="text" name="utm_campaign" id="utm_campaign">
+  </div>
+  <div class="field">
+    <label for="utm_marketing_tactic">utm_marketing_tactic: </label>
+    <input type="text" name="utm_marketing_tactic" id="utm_marketing_tactic">
+  </div>
+
+  <div class="field buttons">
+    <button id="generate_btn">Generate email</button>
+  </div>
+  <hr/>
+  <pre id="display"></pre>
+</body>
+</html>
