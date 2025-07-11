@@ -52,7 +52,7 @@
 
     var emailText = `
       Thank you for choosing our service, please click the link below to continue with us
-      <a href="./email.html?${searchParams.toString()}">OUR GREAT WEBSITE</a>
+      <a href="/utm/email.html?${searchParams.toString()}">OUR GREAT WEBSITE</a>
     `;
     displayArea.innerHTML = emailText;
   });
