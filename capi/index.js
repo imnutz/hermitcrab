@@ -108,6 +108,19 @@
     Cookies.set("_yjr_yjad", "yjryjad_value", cookieOptions);
   }
 
+  function set_lyc_Cookie() {
+    Cookies.set("_ly_c", "lyc_value", cookieOptions);
+  }
+
+  function set_lyr_Cookie() {
+    Cookies.set("_ly_r", "lyr_value", cookieOptions);
+  }
+
+  function set_ly_su_Cookie() {
+    Cookies.set("_ly_su", "lysu_value", cookieOptions);
+  }
+
+
   function set_ltcid_Cookie() {
     Cookies.set("__lt__cid", "__lt__cid_value", cookieOptions);
   }
@@ -212,9 +225,15 @@
     addClickEvent(getElement("c_dsuserid"), set_dsuserid_Cookie);
     addClickEvent(getElement("c_igdid"), set_igdid_Cookie);
 
+    // Yahoo
     addClickEvent(getElement("c_yclyjad"), set_ycl_yjad_Cookie);
     addClickEvent(getElement("c_yjryjad"), set_yjr_yjad_Cookie);
     addClickEvent(getElement("c_yjsuyjad"), set_yjsu_yjad_Cookie);
+
+    addClickEvent(getElement("c_lyc"), set_lyc_Cookie);
+    addClickEvent(getElement("c_lyr"), set_lyr_Cookie);
+    addClickEvent(getElement("c_lysu"), set_ly_su_Cookie);
+    // end Yahoo
 
     addClickEvent(getElement("c_ltcid"), set_ltcid_Cookie);
     addClickEvent(getElement("c_ltsid"), set_ltsid_Cookie);
