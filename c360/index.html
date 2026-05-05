@@ -24,12 +24,6 @@
     });
     td.trackPageview('pageview_c360', function () {
       console.log('tracked pageview')
-
-      td.fetchGlobalID(function (value) {
-        console.log('yay: ', value)
-      }, function (msg) {
-        console.log(msg)
-      })
     })
     td.trackClicks()
 
