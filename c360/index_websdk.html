@@ -14,14 +14,15 @@
       cdpHost: 'cdp-development.in.treasuredata.com'
     })
 
-    td.blockEvents()
+    td.setAnonymousMode()
+    //td.blockEvents()
 
     //td.set('$global', 'td_global_id', 'td_global_id')
     td.set({
       a: 'say a',
       b: 'say b'
-    });
-    td.unblockEvents()
+    })
+    //td.unblockEvents()
     td.trackPageview('pageview_c360', function () {
       console.log('tracked pageview')
     })
