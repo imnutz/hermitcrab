@@ -38,7 +38,7 @@
       if (td.client) {
         td.client.writeKey = apiKeyInput.value
       } else if (td.config) {
-        td.config.writeKey = apiKeyInput.value
+        td.setWriteKey(apiKeyInput.value)
       }
     }
 
