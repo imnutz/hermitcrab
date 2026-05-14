@@ -14,7 +14,8 @@
       cdpHost: 'cdp-development.in.treasuredata.com'
     })
 
-    td.setSignedMode()
+    //td.setSignedMode()
+    td.setAnonymousMode()
     //td.blockEvents()
 
     //td.set('$global', 'td_global_id', 'td_global_id')
@@ -55,5 +56,12 @@
 <body>
   <a href="https://www.treasuredata.com"> Treasure</a>
   <button td-ignore>Click me</button>
+  <button id="set-sm">setSignedMode</button>
 </body>
+<script>
+  var smBtn = document.querySelector('#set-sm')
+  smBtn.addEventListener('click', function(e) {
+    td.setSignedMode()
+  });
+</script>
 </html>
