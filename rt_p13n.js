@@ -1,5 +1,6 @@
 !function() {
   var requestBtn = document.querySelector('#request');
+  var addInlineMsgBtn = document.querySelector('#add_inline_msg');
   var addToCartBtn = document.querySelector('#add_to_cart');
   var buyNowBtn = document.querySelector('#bn_btn');
   var addToWishlist = document.querySelector('#add_to_wishlist');
@@ -95,5 +96,13 @@
       "number_of_clicks": 5,
       "email": "auto_4@gmail.com"
     });
+  });
+
+  addInlineMsgBtn.addEventListener('click', function(evt) {
+    evt.preventDefault();
+
+    var inlineMsgDiv = document.createElement('div');
+    inlineMsgDiv.id = 'inline-message'
+    document.body.prepend(inlineMsgDiv)
   });
 }()
