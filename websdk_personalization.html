@@ -73,13 +73,18 @@
 
   <div class="field">
     <label for="db">Database: </label>
-    <input type="text" name="db" id="db" value="rt_retail_golden">
+    <input type="text" name="db" id="db" value="engage_in_app_message">
     <label for="tb">Table: </label>
-    <input type="text" name="tb" id="tb" value="pageviews">
+    <input type="text" name="tb" id="tb" value="be_users">
   </div>
   <div class="field">
     <label for="payload">Payload(JSON): </label>
-    <textarea name="payload" id="payload"></textarea>
+    <textarea name="payload" id="payload">
+      {
+            "td_client_id": "2026-02-10",
+            "page": "backend"
+      }
+    </textarea>
   </div>
   <div class="field buttons">
     <button id="request" class="first">Request</button>
