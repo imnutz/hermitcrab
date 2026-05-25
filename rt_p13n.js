@@ -59,7 +59,7 @@
       }, 
       payloadJson, 
       function(data) {
-        display.textContent = JSON.stringify(data, null, 2);
+        display.value = JSON.stringify(data, null, 2);
       }, 
       function(e) {
         console.error(e);
