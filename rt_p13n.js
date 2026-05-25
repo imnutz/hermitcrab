@@ -109,6 +109,7 @@
     evt.preventDefault();
 
     var inlineMsgDiv = document.createElement('div');
+    inlineMsgDiv.classList.add('inline-msg');
     inlineMsgDiv.id = 'inline_message'
     document.body.prepend(inlineMsgDiv)
   });
