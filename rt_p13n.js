@@ -6,6 +6,13 @@
   var addToWishlist = document.querySelector('#add_to_wishlist');
   var subscribeBtn = document.querySelector('#subscribe');
   var display = document.querySelector('#display');
+  var playloadArea = document.querySelector('#payload');
+
+  var o1Inline = document.querySelector('#o_1_inline');
+  var o1Inline1Pop = document.querySelector('#o_1_in_1_pop');
+  var o2Pop = document.querySelector('#o_2_pop');
+  var o2Inline = document.querySelector('#o_2_in');
+  var o5 = document.querySelector('#o_5');
 
   var sendRequest = function(payload) {
     var hostInput = document.querySelector('#host');
@@ -105,4 +112,51 @@
     inlineMsgDiv.id = 'inline_message'
     document.body.prepend(inlineMsgDiv)
   });
+
+  o1Inline.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    playloadArea.value = JSON.stringify({
+      "td_client_id": "2026-02-10",
+      "page": "in_browser_1_inline"
+    }, null, 2)
+
+  });
+  o1Inline1Pop.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    playloadArea.value = JSON.stringify({
+      "td_client_id": "2026-02-10",
+      "page": "in_browser_2_both_popup_inline"
+    }, null, 2)
+
+  });
+  o2Pop.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    playloadArea.value = JSON.stringify({
+      "td_client_id": "2026-02-10",
+      "page": "in_browser_2_popup"
+    }, null, 2)
+
+  });
+  o2Inline.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    playloadArea.value = JSON.stringify({
+      "td_client_id": "2026-02-10",
+      "page": "in_browser_2_inline"
+    }, null, 2)
+
+  });
+  o5.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    playloadArea.value = JSON.stringify({
+      "td_client_id": "2026-02-10",
+      "page": "in_browser_2_both_popup_inline, in_browser_1_popup, in_browser_1_inline, in_browser_2_popup, in_browser_2_inline"
+    }, null, 2)
+
+  });
+
+
+  playloadArea.value = JSON.stringify({
+    "td_client_id": "2026-02-10",
+    "page": "in_browser_1_popup"
+  }, null, 2)
 }()

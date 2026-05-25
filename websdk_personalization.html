@@ -4,6 +4,22 @@
   <meta charset="UTF-8">
   <title>RT Personalization 2.0</title>
   <style>
+    .container {
+      display: flex;
+    }
+    .config {
+      flex: 1;
+    }
+    .engage {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .inline-btn {
+      margin-top: 30px;
+    }
+
     .field {
       display: flex;
       align-items: center;
@@ -50,51 +66,58 @@
   <script src="rt_p13n.js" type="text/javascript" defer></script>
 </head>
 <body>
-  <h1>RT P13N</h1> 
-  <button id="add_inline_msg">Add Inline Message field</button>
-  <div class="field">
-    <label for="host">Host: </label>
-    <select name="host" id="host">
-      <option value="us01.p13n.in.treasuredata.com">us01.p13n.in.treasuredata.com</option>
-      <option value="p13n-api-development.treasuredata.com">p13n-api-development.treasuredata.com</option>
-      <option value="eu01.p13n.in.treasuredata.com">eu01.p13n.in.treasuredata.com</option>
-    </select>
-  </div>
+  <div class="container">
+    <div class="config">
+      <h1>RT P13N</h1> 
+      <div class="field">
+        <label for="host">Host: </label>
+        <select name="host" id="host">
+          <option value="p13n-api-development.treasuredata.com">p13n-api-development.treasuredata.com</option>
+          <option value="us01.p13n.in.treasuredata.com">us01.p13n.in.treasuredata.com</option>
+          <option value="eu01.p13n.in.treasuredata.com">eu01.p13n.in.treasuredata.com</option>
+        </select>
+      </div>
 
-  <div class="field">
-    <label for="apikey">API Key: </label>
-    <input type="text" name="apikey" id="apikey">
-  </div>
+      <div class="field">
+        <label for="apikey">API Key: </label>
+        <input type="text" name="apikey" id="apikey">
+      </div>
 
 
-  <div class="field">
-    <label for="token">P13n token: </label>
-    <input type="text" name="token" id="token">
-  </div>
+      <div class="field">
+        <label for="token">P13n token: </label>
+        <input type="text" name="token" id="token">
+      </div>
 
-  <div class="field">
-    <label for="db">Database: </label>
-    <input type="text" name="db" id="db" value="engage_in_app_message">
-    <label for="tb">Table: </label>
-    <input type="text" name="tb" id="tb" value="be_users">
+      <div class="field">
+        <label for="db">Database: </label>
+        <input type="text" name="db" id="db" value="engage_in_app_message">
+        <label for="tb">Table: </label>
+        <input type="text" name="tb" id="tb" value="be_users">
+      </div>
+      <div class="field">
+        <label for="payload">Payload(JSON): </label>
+        <textarea name="payload" id="payload"></textarea>
+      </div>
+      <div class="field buttons">
+        <button id="request" class="first">Request</button>
+        <button id="add_to_cart">Add to cart</button>
+        <button id="bn_btn">Buy now</button>
+        <button id="add_to_wishlist">Add to wishlist</button>
+        <button id="subscribe">Subscribe</button>
+      </div>
+      <hr/>
+      <pre id="display"></pre>
+    </div>
+    <div class="engage">
+      <button id="o_1_inline">1offer/inline x 1</button>
+      <button id="o_1_in_1_pop">1 offer / inline + popup (mixed)</button>
+      <button id="o_2_pop">1 offer / popup × 2</button>
+      <button id="o_2_in">1 offer / inline × 2</button>
+      <button id="o_5">Most Complex Sample (5 offers)</button>
+
+      <button class="inline-btn" id="add_inline_msg">Add Inline Message field</button>
+    </div>
   </div>
-  <div class="field">
-    <label for="payload">Payload(JSON): </label>
-    <textarea name="payload" id="payload">
-      {
-            "td_client_id": "2026-02-10",
-            "page": "backend"
-      }
-    </textarea>
-  </div>
-  <div class="field buttons">
-    <button id="request" class="first">Request</button>
-    <button id="add_to_cart">Add to cart</button>
-    <button id="bn_btn">Buy now</button>
-    <button id="add_to_wishlist">Add to wishlist</button>
-    <button id="subscribe">Subscribe</button>
-  </div>
-  <hr/>
-  <pre id="display"></pre>
 </body>
 </html>
