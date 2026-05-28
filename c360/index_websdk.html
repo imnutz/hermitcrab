@@ -17,7 +17,7 @@
 
     td.setSignedMode()
     //td.setAnonymousMode()
-    //td.blockEvents()
+    td.blockEvents()
 
     //td.set('$global', 'td_global_id', 'td_global_id')
     td.set({
@@ -56,13 +56,30 @@
 </head>
 <body>
   <a href="https://www.treasuredata.com"> Treasure</a>
-  <button td-ignore>Click me</button>
+  <button>Click me</button>
   <button id="set-sm">setSignedMode</button>
+  <button id="set-am">setAnonymousMode</button>n
+  <button id="set-be">Block Events</button>
+  <button id="set-ube">Unblock Events</button>
 </body>
 <script>
+  var amBtn = document.querySelector('#set-am')
+  amBtn.addEventListener('click', function(e) {
+    td.setAnonymousMode()
+  });
+
   var smBtn = document.querySelector('#set-sm')
   smBtn.addEventListener('click', function(e) {
     td.setSignedMode()
+  });
+  var beBtn = document.querySelector('#set-be')
+  beBtn.addEventListener('click', function(e) {
+    td.blockEvents()
+  });
+
+  var ubeBtn = document.querySelector('#set-ube')
+  ubeBtn.addEventListener('click', function(e) {
+    td.unblockEvents()
   });
 </script>
 </html>
