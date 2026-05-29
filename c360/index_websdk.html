@@ -11,11 +11,10 @@
       database: 'xxxxxxxxxx',
       writeKey: 'xxxxxxxxxx',
       host: 'xxxxxxxxxx',
-      cdpHost: 'cdp-development.in.treasuredata.com',
-      storeConsentByLocalStorage: true
+      cdpHost: 'cdp-development.in.treasuredata.com'
     })
 
-    //td.setSignedMode()
+    td.setSignedMode()
     //td.setAnonymousMode()
     //td.blockEvents()
 
@@ -27,6 +26,12 @@
     //td.unblockEvents()
     td.trackPageview('pageview_c360', function () {
       console.log('tracked pageview')
+
+      td.fetchGlobalID(function (value) {
+        console.log('yay: ', value)
+      }, function () {
+        console.log('nay')
+      })
     })
     td.trackClicks()
 
