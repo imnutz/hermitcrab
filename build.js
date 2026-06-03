@@ -70,12 +70,13 @@ function fastApiKey() {
   fs.writeFileSync("./audiences/test_audiences.html", replacedData, "utf-8");
 }
 
-let { database, tdHost, apiKey, segmentToken, c360Host, profileToken } =
+let { database, tdHost, apiKey, segmentToken, c360Host, profileToken, devhost,devapikey } =
   process.env;
 
 replaceTdInfo("./index.html", database, c360Host, apiKey, segmentToken);
 replaceTdInfo("./fetch_measurement.html", database, c360Host, apiKey, segmentToken);
 replaceTdInfo("./index2.html", database, c360Host, apiKey, segmentToken);
+replaceTdInfo("./websdk_personalization.html", database, devhost, devapikey);
 
 replaceTdInfo(
   "./c360/*.html",
