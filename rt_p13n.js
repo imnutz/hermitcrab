@@ -69,7 +69,6 @@
 
     td.trackPageview(
       'websdk_pageview', 
-      payloadJson, 
       function(data) {
         display.value = JSON.stringify(data, null, 2);
       }, 
