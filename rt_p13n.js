@@ -50,6 +50,7 @@
       }
     }
 
+    /*
     td.fetchPersonalization(
       {
         endpoint: host || 'p13n-api-development.treasuredata.com',
@@ -64,8 +65,27 @@
       function(e) {
         console.error(e);
       }
-    );
+    );*/
 
+    td.trackPageview(
+      'websdk_pageview', 
+      payloadJson, 
+      function(data) {
+        display.value = JSON.stringify(data, null, 2);
+      }, 
+      function(e) {
+        console.error(e);
+      },
+      {
+        personalization: {
+          endpoint: host || 'p13n-api-development.treasuredata.com',
+          database: db,
+          table: table,
+          token: token,
+          payload: payloadJson
+        }
+      }
+    );
   }
 
   requestBtn.addEventListener('click', function(evt) {
