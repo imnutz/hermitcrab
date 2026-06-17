@@ -15,7 +15,6 @@
       personalization: {
         endpoint: 'p13n-api-development.treasuredata.com',
         database: 'engage_in_app_message',
-        table: 'be_users',
         token: 'xxxxxxxxxx',
         payload: {
           "td_client_id": "2026-02-10",
@@ -28,20 +27,14 @@
     //td.setAnonymousMode()
     //td.blockEvents()
 
-    td.set('$global', 'td_global_id', 'td_global_id')
+    //td.set('$global', 'td_global_id', 'td_global_id')
     td.set({
-      a: 'say a',
-      b: 'say b'
+      td_client_id: '2026-02-10',
+      page: 'in_browser_1_popup'
     })
     //td.unblockEvents()
-    td.trackPageview('pageview_c360', function () {
+    td.trackPageview('be_users', function () {
       console.log('tracked pageview')
-
-      td.fetchGlobalID(function (value) {
-        console.log('yay: ', value)
-      }, function () {
-        console.log('nay')
-      })
     })
     td.trackClicks()
 
