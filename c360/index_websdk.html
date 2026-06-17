@@ -15,11 +15,7 @@
       personalization: {
         endpoint: 'p13n-api-development.treasuredata.com',
         database: 'engage_in_app_message',
-        token: 'xxxxxxxxxx',
-        payload: {
-          "td_client_id": "2026-02-10",
-          "page": "in_browser_1_popup"
-        }
+        token: 'xxxxxxxxxx'
       }
     })
     // abc
@@ -32,6 +28,11 @@
       td_client_id: '2026-02-10',
       page: 'in_browser_1_popup'
     })
+    td.set({
+      a: 'a',
+      b: 'b'
+    })
+
     //td.unblockEvents()
     td.trackPageview('be_users', function () {
       console.log('tracked pageview')
