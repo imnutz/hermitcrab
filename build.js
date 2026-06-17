@@ -78,6 +78,7 @@ replaceTdInfo("./index.html", database, c360Host, apiKey, segmentToken);
 replaceTdInfo("./fetch_measurement.html", database, c360Host, apiKey, segmentToken);
 replaceTdInfo("./index2.html", database, c360Host, apiKey, segmentToken);
 replaceTdInfo("./websdk_personalization.html", database, devhost, devapikey);
+// it should work
 replaceTdInfo('./c360/index_websdk.html', database, devhost, devapikey, segmentToken, profileToken)
 
 replaceTdInfo(
