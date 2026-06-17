@@ -26,7 +26,7 @@ function replaceTdInfo(
   files.forEach((fileName) => {
     var data = fs.readFileSync(fileName, "utf-8");
     var replacedData = data
-      .replace(/database:.*('|")/g, `database: '${database}'`)
+      .replace(/database:.*('|")xxxxxxxxxx('|")/g, `database: '${database}'`)
       .replace(/host:.*('|")/g, `host: '${host}'`)
       .replace(/writeKey:.*('|")/g, `writeKey: '${apiKey}'`)
       .replace(/audienceToken:.*\[.*\]/g, `audienceToken: ['${segmentToken}']`)
