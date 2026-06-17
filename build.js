@@ -30,7 +30,7 @@ function replaceTdInfo(
       .replace(/host:.*('|")/g, `host: '${host}'`)
       .replace(/writeKey:.*('|")/g, `writeKey: '${apiKey}'`)
       .replace(/audienceToken:.*\[.*\]/g, `audienceToken: ['${segmentToken}']`)
-      .replace(/token:.*\[.*\]/g, `token: '${profileToken}'`);
+      .replace(/token:.*('|")/g, `token: '${profileToken}'`);
 
     fs.writeFileSync(fileName, replacedData, "utf-8");
   });
