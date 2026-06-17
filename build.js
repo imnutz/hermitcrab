@@ -81,6 +81,7 @@ replaceTdInfo("./websdk_personalization.html", database, devhost, devapikey);
 // it should work
 replaceTdInfo('./c360/index_websdk.html', database, devhost, devapikey, segmentToken, profileToken)
 
+/*
 replaceTdInfo(
   "./c360/*.html",
   database,
@@ -88,7 +89,7 @@ replaceTdInfo(
   apiKey,
   segmentToken,
   profileToken,
-);
+);*/
 replaceTdInfo(
   "./cors/*.html",
   database,
