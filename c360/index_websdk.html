@@ -11,7 +11,17 @@
       database: 'xxxxxxxxxx',
       writeKey: 'xxxxxxxxxx',
       host: 'xxxxxxxxxx',
-      cdpHost: 'cdp-development.in.treasuredata.com'
+      cdpHost: 'cdp-development.in.treasuredata.com',
+      personalization: {
+        endpoint: 'p13n-api-development.treasuredata.com',
+        database: 'engage_in_app_message',
+        table: 'be_users',
+        token: 'xxxxxxxxxx',
+        payload: {
+          "td_client_id": "2026-02-10",
+          "page": "in_browser_1_popup"
+        }
+      }
     })
 
     td.setSignedMode()
