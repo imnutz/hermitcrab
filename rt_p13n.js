@@ -50,39 +50,18 @@
       }
     }
 
-    /*
-    td.fetchPersonalization(
-      {
-        endpoint: host || 'p13n-api-development.treasuredata.com',
-        database: db,
-        table: table,
-        token: token
-      }, 
-      payloadJson, 
-      function(data) {
-        display.value = JSON.stringify(data, null, 2);
-      }, 
-      function(e) {
-        console.error(e);
-      }
-    );*/
-
+    td.setPersonalizationConfig({
+      token: token,
+      payload: payloadJson
+    })
+ 
     td.trackPageview(
-      'websdk_pageview', 
+      'be_users', 
       function(data) {
         display.value = JSON.stringify(data, null, 2);
       }, 
       function(e) {
         console.error(e);
-      },
-      {
-        personalization: {
-          endpoint: host || 'p13n-api-development.treasuredata.com',
-          database: db,
-          table: table,
-          token: token,
-          payload: payloadJson
-        }
       }
     );
   }
