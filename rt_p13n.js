@@ -58,7 +58,7 @@
     })
  
     td.trackPageview(
-      'be_users', 
+      'pageviews', 
       function(data) {
         display.value = JSON.stringify(data, null, 2);
       }, 
