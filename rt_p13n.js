@@ -51,6 +51,8 @@
     }
 
     td.setPersonalizationConfig({
+      endpoint: host,
+      database: db,
       token: token,
       payload: payloadJson
     })
